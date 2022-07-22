@@ -43,11 +43,11 @@
 
     <View
         android:id="@+id/rectangle_1"
-        android:layout_width="345dp"
-        android:layout_height="199dp"
+        android:layout_width="339dp"
+        android:layout_height="167dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="39dp"
+        android:layout_marginLeft="41dp"
         android:layout_marginTop="553dp"
         android:background="@drawable/rectangle_1" />
 
@@ -66,8 +66,8 @@
     <View
         android:id="@+id/rectangle_2"
 
-        android:layout_width="wrap_content"
-        android:layout_height="71dp"
+        android:layout_width="313dp"
+        android:layout_height="59dp"
         android:layout_alignLeft="@id/rectangle_1"
         android:layout_alignTop="@id/rectangle_1"
         android:layout_alignBottom="@id/rectangle_1"
@@ -75,12 +75,12 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="60dp"
-        android:layout_marginLeft="43dp"
+        android:layout_marginLeft="45dp"
         android:layout_marginTop="634dp"
         android:layout_marginEnd="60dp"
 
         android:layout_marginRight="17dp"
-        android:layout_marginBottom="26dp"
+        android:layout_marginBottom="27dp"
         android:background="@drawable/rectangle_2">
 
 
@@ -92,8 +92,8 @@
         android:layout_height="36dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="107dp"
-        android:layout_marginTop="585dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="584dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
         android:text="@string/begin_document"
@@ -105,8 +105,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="83dp"
-        android:layout_marginTop="664dp"
+        android:layout_marginLeft="81dp"
+        android:layout_marginTop="654dp"
         android:fontFamily="@font/gilroyb"
         android:gravity="top"
         android:text="@string/connect_to_"
@@ -118,8 +118,8 @@
         android:layout_height="53dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="281dp"
-        android:layout_marginTop="646dp"
+        android:layout_marginLeft="287dp"
+        android:layout_marginTop="638dp"
         android:background="@drawable/img_1" />
 
 

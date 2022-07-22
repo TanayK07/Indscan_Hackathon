@@ -3,14 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.138" />
+        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/back_arrow_icon.xml" value="0.138" />
+        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/elipse_1.xml" value="0.1" />
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/ic_launcher_background.xml" value="0.138" />
+        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/icnon.xml" value="0.138" />
+        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/icon_camera.xml" value="0.138" />
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/img.xml" value="0.138" />
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/img_1.xml" value="0.138" />
+        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/layout_curved.xml" value="0.138" />
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/rectangle_1.xml" value="0.138" />
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/rectangle_2.xml" value="0.138" />
+        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/round_red.xml" value="0.138" />
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/sdmnf.xml" value="0.1" />
-        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/yellowround.xml" value="0.138" />
+        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/layout/activity_main.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/layout/scanningscreen.xml" value="0.22" />
+        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/layout/uploadingscreen.xml" value="0.22" />
       </map>
     </option>
   </component>

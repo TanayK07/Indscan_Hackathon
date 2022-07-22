@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#EDEEF1"
+
+
+    >
+
+
+    <View
+        android:id="@+id/icons8_go_b"
+        android:layout_width="75dp"
+        android:layout_height="69dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/img_8" />
+
+    <TextView
+        android:id="@+id/scanned_doc"
+        android:layout_width="293dp"
+        android:layout_height="64dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="108dp"
+        android:fontFamily="@font/clash_display"
+        android:gravity="top"
+        android:text="Scanned  Documents"
+        android:textAppearance="@style/scanned_doc"
+        android:textSize="25dp" />
+
+    <View
+        android:id="@+id/rectangle_1"
+        android:layout_width="339dp"
+        android:layout_height="167dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="553dp"
+        android:background="@drawable/rectangle_1" />
+    <TextView
+        android:id="@+id/begin_docum"
+        android:layout_width="235dp"
+        android:layout_height="36dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="584dp"
+        android:fontFamily="@font/gilroym"
+        android:gravity="top"
+        android:text="Scanned Documents: 69"
+        android:textAppearance="@style/begin_docum" />
+    <View
+        android:id="@+id/rectangle_2"
+
+        android:layout_width="wrap_content"
+        android:layout_height="71dp"
+        android:layout_alignLeft="@id/rectangle_1"
+        android:layout_alignTop="@id/rectangle_1"
+        android:layout_alignBottom="@id/rectangle_1"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="634dp"
+        android:layout_marginEnd="60dp"
+
+        android:layout_marginRight="17dp"
+        android:layout_marginBottom="26dp"
+        android:background="@drawable/rectangle_2">
+
+
+
+    </View>
+
+    <View
+        android:id="@+id/image_11"
+        android:layout_width="121.72dp"
+        android:layout_height="154dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="141dp"
+
+        />
+    <View
+        android:id="@+id/docu2"
+        android:layout_width="121.72dp"
+        android:layout_height="154dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="141dp"
+
+        />
+    <View
+        android:id="@+id/docu1"
+        android:layout_width="121.72dp"
+        android:layout_height="154dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="49dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="141dp"
+
+        />
+    <View
+        android:id="@+id/docu3"
+        android:layout_width="121.72dp"
+        android:layout_height="154dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="220dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="333dp"
+
+        />
+    <View
+        android:id="@+id/docu4"
+        android:layout_width="121.72dp"
+        android:layout_height="154dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="49dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="333dp"
+
+        />
+    <View
+        android:id="@+id/docu5"
+        android:layout_width="121.72dp"
+        android:layout_height="154dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="49dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="527dp"
+
+        />
+
+
+
+    <TextView
+        android:id="@+id/connect_to_"
+        android:layout_width="224dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="102dp"
+        android:layout_marginTop="655dp"
+        android:fontFamily="@font/gilroyb"
+        android:gravity="top"
+        android:text="Send to web portal"
+        android:textAppearance="@style/connect_to_" />
+
+    <View
+        android:id="@+id/icons8_qr_c"
+        android:layout_width="57dp"
+        android:layout_height="53dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="283dp"
+        android:layout_marginTop="641dp"
+        android:background="@drawable/img_8"
+        android:rotationY="180" />
+
+</RelativeLayout>
