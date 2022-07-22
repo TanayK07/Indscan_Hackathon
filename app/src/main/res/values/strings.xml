@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">INDScan</string>
+    <string name="indscan">IndScan</string>
+    <string name="scanning_an">Scanning and Indexing \nDocuments, Simplified.</string>
+    <string name="begin_document">Begin document scan</string>
+    <string name="begin_docu">Begin document scan</string>
+
+    <string name="connect_to_">Connect to web portal</string>
+
+
+</resources>
