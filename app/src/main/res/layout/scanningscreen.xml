@@ -13,9 +13,9 @@
         android:id="@+id/rectangle_3"
         android:layout_width="96dp"
         android:layout_height="34dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="304dp"
+        android:layout_marginStart="304dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/round_red" />
 
@@ -23,49 +23,52 @@
         android:id="@+id/disconnect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="315dp"
+        android:layout_marginStart="315dp"
         android:layout_marginTop="33dp"
         android:fontFamily="@font/gilroyb"
         android:gravity="top"
         android:text="DISCONNECT"
-        android:textAppearance="@style/disconnect" />
+        android:textAppearance="@style/disconnect"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/connected_t"
         android:layout_width="97dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="25dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
         android:text="Connected to"
-        android:textAppearance="@style/connected_t" />
+        android:textAppearance="@style/connected_t"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/some_id"
         android:layout_width="187dp"
         android:layout_height="37dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/cdsemi"
         android:gravity="top"
         android:text="192.168.0.1"
-        android:textAppearance="@style/some_id" />
+        android:textAppearance="@style/some_id"
+        tools:ignore="HardcodedText" />
 
 
     <View
         android:id="@+id/group_3"
         android:layout_width="75dp"
         android:layout_height="73dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="299dp"
+        android:layout_marginStart="299dp"
         android:layout_marginTop="627dp"
         android:background="@drawable/yellowround" />
 
@@ -73,9 +76,9 @@
         android:id="@+id/icons8_go_b"
         android:layout_width="76dp"
         android:layout_height="73dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="298dp"
+        android:layout_marginStart="298dp"
         android:layout_marginTop="628dp"
         android:background="@drawable/img_8"
         android:rotationY="180" />
@@ -84,9 +87,9 @@
         android:id="@+id/ellipse_1"
         android:layout_width="73dp"
         android:layout_height="73dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="170dp"
+        android:layout_marginStart="170dp"
         android:layout_marginTop="627dp"
         android:background="@drawable/elipse_1" />
 
@@ -94,9 +97,9 @@
         android:id="@+id/icons8_came"
         android:layout_width="46dp"
         android:layout_height="44dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="183dp"
+        android:layout_marginStart="183dp"
         android:layout_marginTop="640dp"
         android:background="@drawable/img_2" />
 
