@@ -35,7 +35,7 @@
         android:layout_marginTop="111dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
-        android:text="Scanning &amp; Indexing\nDocuments  Simplified"
+        android:text="Scanning and Indexing\nDocuments  Simplified"
         android:textAppearance="@style/scanning_an"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="32dp"
