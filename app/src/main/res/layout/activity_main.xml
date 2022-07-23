@@ -20,7 +20,7 @@
         android:layout_marginTop="44dp"
         android:fontFamily="@font/cdsemi"
         android:gravity="top"
-        android:text="@string/indscan"
+        android:text="IndScan"
         android:textAppearance="@style/indscan"
         tools:layout_editor_absoluteX="32dp"
         tools:layout_editor_absoluteY="26dp" />
@@ -35,7 +35,7 @@
         android:layout_marginTop="111dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
-        android:text="@string/scanning_an"
+        android:text="Scanning &amp; Indexing\nDocuments  Simplified"
         android:textAppearance="@style/scanning_an"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="32dp"
@@ -96,7 +96,7 @@
         android:layout_marginTop="584dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
-        android:text="@string/begin_document"
+        android:text="Begin Document Scan"
         android:textAppearance="@style/begin_docum" />
 
     <TextView
@@ -109,7 +109,7 @@
         android:layout_marginTop="654dp"
         android:fontFamily="@font/gilroyb"
         android:gravity="top"
-        android:text="@string/connect_to_"
+        android:text="Connect to Web Portal"
         android:textAppearance="@style/connect_to_" />
 
     <View
