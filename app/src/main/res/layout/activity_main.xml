@@ -15,16 +15,17 @@
         android:layout_height="70dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="14dp"
 
+        android:layout_centerInParent="true"
+        android:layout_marginStart="14dp"
         android:layout_marginTop="44dp"
         android:fontFamily="@font/cdsemi"
         android:gravity="top"
-        android:text="IndScan"
+        android:text="@string/indscan"
         android:textAppearance="@style/indscan"
+        tools:ignore="HardcodedText"
         tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="26dp"
-        tools:ignore="HardcodedText" />
+        tools:layout_editor_absoluteY="26dp" />
 
     <TextView
         android:id="@+id/scanning_an"
@@ -36,9 +37,8 @@
         android:layout_marginTop="111dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
-        android:text="Scanning and Indexing\nDocuments  Simplified"
+        android:text="@string/scanning_an"
         android:textAppearance="@style/scanning_an"
-        tools:ignore="HardcodedText,MissingConstraints"
         tools:layout_editor_absoluteX="32dp"
         tools:layout_editor_absoluteY="103dp" />
 
@@ -48,7 +48,8 @@
         android:layout_height="167dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="41dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="553dp"
         android:background="@drawable/rectangle_1" />
 
@@ -87,31 +88,33 @@
 
     <TextView
         android:id="@+id/begin_docum"
-        android:layout_width="235dp"
-        android:layout_height="36dp"
-        android:layout_alignParentStart="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="584dp"
+
+        android:layout_centerInParent="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="577dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
-        android:text="Begin Document Scan"
+        android:text="@string/begin_docum"
         android:textAppearance="@style/begin_docum"
-        tools:ignore="HardcodedText" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/connect_to_"
-        android:layout_width="224dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="81dp"
-        android:layout_marginTop="654dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="651dp"
+      
         android:fontFamily="@font/gilroyb"
         android:gravity="top"
-        android:text="Connect to Web Portal"
-        android:textAppearance="@style/connect_to_"
-        tools:ignore="HardcodedText" />
+        android:text="@string/connect_to_"
+        android:textAppearance="@style/connect_to_" />
 
     <View
         android:id="@+id/icons8_qr_c"

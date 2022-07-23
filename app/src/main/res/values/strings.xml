@@ -1,7 +1,18 @@
 <resources>
+<string name="begin_docum">Begin document scan</string>
+    <string name="scanning_an">Scanning and Indexing  Documents  Simplified </string>
+    <string name="connected_t">Connected to</string>
+    <string name="disconnect">DISCONNECT</string>
+    <string name="scanned_doc">Scanned Documents</string>
+    <string name="scanned_docs">Scanned Documents :
+</string>
+    <string name="send_to_web">"  Send to web portal "</string>
 
 
 
+
+    <string name="indscan">IndScan</string>
+    <string name="connect_to_">Connect to web portal</string>
 
 
 </resources>

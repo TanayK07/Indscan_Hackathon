@@ -29,7 +29,7 @@
         android:layout_marginTop="33dp"
         android:fontFamily="@font/gilroyb"
         android:gravity="top"
-        android:text="DISCONNECT"
+        android:text="@string/disconnect"
         android:textAppearance="@style/disconnect"
         tools:ignore="HardcodedText" />
 
@@ -43,7 +43,7 @@
         android:layout_marginTop="25dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
-        android:text="Connected to"
+        android:text="@string/connected_t"
         android:textAppearance="@style/connected_t"
         tools:ignore="HardcodedText" />
 
