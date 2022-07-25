@@ -31,9 +31,10 @@
         android:layout_marginTop="108dp"
         android:fontFamily="@font/clash_display"
         android:gravity="top"
+
         android:text="@string/scanned_doc"
         android:textAppearance="@style/scanned_doc"
-        android:textSize="25sp"
+        android:textSize="@dimen/ScannedDocs"
         tools:ignore="HardcodedText" />
 
     <View
@@ -57,7 +58,8 @@
         android:fontFamily="@font/gilroym"
         android:gravity="top"
         android:text="@string/scanned_doc"
-        android:textAppearance="@style/begin_docum" />
+        android:textAppearance="@style/begin_docum"
+        android:textSize="@dimen/ScannedDocs1" />
 
     <View
         android:id="@+id/rectangle_2"
@@ -76,7 +78,6 @@
 
         android:layout_marginBottom="26dp"
         android:background="@drawable/rectangle_2">
-
 
 
     </View>
@@ -145,16 +146,17 @@
 
     <TextView
         android:id="@+id/connect_to_"
-        android:layout_width="224dp"
-        android:layout_height="wrap_content"
+        android:layout_width="227dp"
+        android:layout_height="34dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="655dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="651dp"
         android:fontFamily="@font/gilroyb"
         android:gravity="top"
         android:text="@string/send_to_web"
         android:textAppearance="@style/connect_to_"
+        android:textSize="@dimen/SendtoWeb"
         tools:ignore="HardcodedText" />
 
     <View
@@ -163,8 +165,8 @@
         android:layout_height="53dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="283dp"
-        android:layout_marginTop="641dp"
+        android:layout_marginStart="287dp"
+        android:layout_marginTop="638dp"
         android:background="@drawable/img_8"
         android:rotationY="180" />
 

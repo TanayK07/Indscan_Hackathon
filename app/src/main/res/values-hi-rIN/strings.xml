@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="begin_docum">दस्तावेज़ स्कैन करें</string>
+    <string name="indscan">इंडस्कैन</string>
+    <string name="connect_to_">"वेब पोर्टल से जुड़ें "</string>
+    <string name="scanning_an">स्कैन करना और ढूंढ़ना \nअब आसान</string>
+    <string name="connected_t">कनेक्टेड टू</string>
+    <string name="disconnect">डिस्कनेक्ट</string>
+    <string name="scanned_doc">"स्कैन किए गए दस्तावेज़ "</string>
+    <string name="scanned_docs">स्कैन किए गए दस्तावेज़ :</string>
+    <string name="send_to_web">"वेब पोर्टल पर भेजें "</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="webportal">22sp</dimen>
+    <dimen name="Indscan">75sp</dimen>
+    <dimen name="Scansearch">20sp</dimen>
+    <dimen name="Docscan">28sp</dimen>
+    <dimen name="Connected">20sp</dimen>
+    <dimen name="disConnected">18sp</dimen>
+    <dimen name="ScannedDocs">28sp</dimen>
+    <dimen name="ScannedDocs1">26sp</dimen>
+    <dimen name="SendtoWeb">22sp</dimen>
+
+</resources>

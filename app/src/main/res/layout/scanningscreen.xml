@@ -25,12 +25,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="315dp"
+
+
+        android:layout_centerInParent="true"
+        android:layout_marginStart="313dp"
         android:layout_marginTop="33dp"
         android:fontFamily="@font/gilroyb"
         android:gravity="top"
         android:text="@string/disconnect"
         android:textAppearance="@style/disconnect"
+        android:textSize="@dimen/disConnected"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -39,12 +43,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="18dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
         android:text="@string/connected_t"
         android:textAppearance="@style/connected_t"
+        android:textSize="@dimen/Connected"
         tools:ignore="HardcodedText" />
 
     <TextView
