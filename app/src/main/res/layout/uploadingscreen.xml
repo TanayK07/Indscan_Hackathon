@@ -1,83 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity"
-    android:layout_height="match_parent"
+    android:id="@+id/relativeLayout3"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#EDEEF1"
 
 
-    >
+    tools:context=".MainActivity">
 
 
     <View
         android:id="@+id/icons8_go_b"
         android:layout_width="75dp"
         android:layout_height="69dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="27dp"
         android:layout_marginTop="26dp"
-        android:background="@drawable/img_8" />
+        android:background="@drawable/img_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/scanned_doc"
         android:layout_width="293dp"
         android:layout_height="64dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="92dp"
         android:fontFamily="@font/clash_display"
         android:gravity="top"
 
         android:text="@string/scanned_doc"
         android:textAppearance="@style/scanned_doc"
         android:textSize="@dimen/ScannedDocs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
     <View
         android:id="@+id/rectangle_1"
         android:layout_width="339dp"
         android:layout_height="167dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="39dp"
         android:layout_marginTop="553dp"
-        android:background="@drawable/rectangle_1" />
+        android:background="@drawable/rectangle_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/begin_docum"
         android:layout_width="235dp"
         android:layout_height="36dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="98dp"
         android:layout_marginTop="584dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
         android:text="@string/scanned_doc"
         android:textAppearance="@style/begin_docum"
-        android:textSize="@dimen/ScannedDocs1" />
+        android:textSize="@dimen/ScannedDocs1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/rectangle_2"
 
-        android:layout_width="wrap_content"
-        android:layout_height="71dp"
-        android:layout_alignStart="@id/rectangle_1"
-        android:layout_alignTop="@id/rectangle_1"
-        android:layout_alignBottom="@id/rectangle_1"
+        android:layout_width="291dp"
+        android:layout_height="59dp"
 
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="68dp"
         android:layout_marginTop="634dp"
-        android:layout_marginEnd="60dp"
 
         android:layout_marginBottom="26dp"
-        android:background="@drawable/rectangle_2">
+        android:background="@drawable/rectangle_2"
+        app:layout_constraintBottom_toBottomOf="@id/rectangle_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
 
     </View>
@@ -86,70 +84,67 @@
         android:id="@+id/image_11"
         android:layout_width="121.72dp"
         android:layout_height="154dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="220dp"
         android:layout_marginTop="141dp"
 
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:id="@+id/docu2"
         android:layout_width="121.72dp"
         android:layout_height="154dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="220dp"
         android:layout_marginTop="141dp"
 
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:id="@+id/docu1"
         android:layout_width="121.72dp"
         android:layout_height="154dp"
-        android:layout_alignParentStart="true"
         android:layout_marginStart="49dp"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="141dp"
 
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:id="@+id/docu3"
         android:layout_width="121.72dp"
         android:layout_height="154dp"
-        android:layout_alignParentStart="true"
         android:layout_marginStart="220dp"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="333dp"
 
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:id="@+id/docu4"
         android:layout_width="121.72dp"
         android:layout_height="154dp"
-        android:layout_alignParentStart="true"
         android:layout_marginStart="49dp"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="333dp"
 
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:id="@+id/docu5"
         android:layout_width="121.72dp"
         android:layout_height="154dp"
-        android:layout_alignParentStart="true"
         android:layout_marginStart="49dp"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="527dp"
 
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
         android:id="@+id/connect_to_"
         android:layout_width="227dp"
         android:layout_height="34dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="86dp"
         android:layout_marginTop="651dp"
         android:fontFamily="@font/gilroyb"
@@ -157,17 +152,19 @@
         android:text="@string/send_to_web"
         android:textAppearance="@style/connect_to_"
         android:textSize="@dimen/SendtoWeb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
     <View
         android:id="@+id/icons8_qr_c"
         android:layout_width="57dp"
         android:layout_height="53dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="287dp"
         android:layout_marginTop="638dp"
         android:background="@drawable/img_8"
-        android:rotationY="180" />
+        android:rotationY="180"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

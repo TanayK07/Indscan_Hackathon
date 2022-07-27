@@ -9,4 +9,12 @@
     <string name="scanned_doc">"स्कैन किए गए दस्तावेज़ "</string>
     <string name="scanned_docs">स्कैन किए गए दस्तावेज़ :</string>
     <string name="send_to_web">"वेब पोर्टल पर भेजें "</string>
+    <string name="app_name">Indscan</string>
+
+    <string name="apply_filter">फिल्टर लगाएं</string>
+    <string name="accept_scan">"स्कैन भेजे "</string>
+    <string name="none">नहीं</string>
+    <string name="greyscale">ग्रेस्केल</string>
+    <string name="magiccolor">"मैजिक कलर "</string>
+    <string name="cool">"कूल "</string>
 </resources>

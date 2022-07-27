@@ -1,13 +1,21 @@
 <resources>
+    <string name="app_name">IndScan</string>
 <string name="begin_docum">Begin document scan</string>
     <string name="scanning_an">Scanning and Indexing  Documents  Simplified </string>
     <string name="connected_t">Connected to</string>
     <string name="disconnect">DISCONNECT</string>
     <string name="scanned_doc">Scanned Documents</string>
-    <string name="scanned_docs">Scanned Documents :
-</string>
-    <string name="send_to_web">"  Send to web portal "</string>
+    <string name="scanned_docs">Scanned Documents :</string>
+    <string name="send_to_web">"Send to web portal"</string>
+    <string name="apply_filter">Apply filter</string>
+    <string name="none">NONE</string>
+    <string name="greyscale">GREYSCALE</string>
+    <string name="magiccolor">MAGIC COLOR</string>
+    <string name="cool">COOL</string>
 
+
+
+    <string name="accept_scan">Accept Scan</string>
 
 
 

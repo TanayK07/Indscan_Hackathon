@@ -9,6 +9,16 @@
     <dimen name="ScannedDocs">26sp</dimen>
     <dimen name="ScannedDocs1">24sp</dimen>
     <dimen name="SendtoWeb">18sp</dimen>
+    <dimen name="appley_filter">30sp</dimen>
+    <dimen name="scandocapplyfilterpg">24sp</dimen>
+    <dimen name="acceptscan">20sp</dimen>
+    <dimen name="none">10sp</dimen>
+
+
+
+
+
+
 
 
 
