@@ -15,8 +15,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/cdsemi"
         android:gravity="top"
         android:text="@string/indscan"
@@ -35,57 +35,59 @@
         android:layout_width="237dp"
 
         android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="102dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
         android:text="@string/scanning_an"
         android:textAppearance="@style/scanning_an"
         android:textSize="@dimen/Scansearch"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/rectangle_1"
-        android:layout_width="366dp"
-        android:layout_height="150dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="553dp"
-        android:background="@drawable/rectangle_1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/indscan"
+        app:layout_constraintTop_toBottomOf="@+id/indscan"
         app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/image_1"
         android:layout_width="329dp"
         android:layout_height="385dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="155dp"
-        android:background="@drawable/img"
+        android:background="@drawable/img1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/scanning_an"
+        app:layout_constraintVertical_bias="0.16000003" />
 
     <View
+        android:id="@+id/rectangle_1"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rectangle_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <View
+        android:layout_height="0dp"
         android:id="@+id/rectangle_2"
 
         android:layout_width="313dp"
-        android:layout_height="59dp"
 
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="634dp"
-
-        android:layout_marginBottom="27dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/rectangle_2"
         app:layout_constraintBottom_toBottomOf="@id/rectangle_1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.647">
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+        app:layout_constraintTop_toBottomOf="@+id/begin_docum">
 
 
     </View>
@@ -98,17 +100,17 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
 
-        android:layout_marginTop="577dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
         android:text="@string/begin_docum"
         android:textAppearance="@style/begin_docum"
         android:textSize="@dimen/Docscan"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_1"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_1"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -118,30 +120,33 @@
 
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/gilroyb"
         android:gravity="center_horizontal"
         android:text="@string/connect_to_"
         android:textAlignment="center"
         android:textAppearance="@style/connect_to_"
         android:textSize="@dimen/webportal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_2"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_2"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_2" />
 
-    <View
+    <ImageView
         android:id="@+id/icons8_qr_c"
-        android:layout_width="57dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="296dp"
-        android:layout_marginTop="628dp"
+        android:layout_height="0dp"
+        android:layout_width="10dp"
+        android:scaleType="center"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/img_1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_2"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_2"
+        app:layout_constraintStart_toEndOf="@+id/connect_to_"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

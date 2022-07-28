@@ -12,6 +12,22 @@
     <string name="greyscale">GREYSCALE</string>
     <string name="magiccolor">MAGIC COLOR</string>
     <string name="cool">COOL</string>
+    <string name="pairing_cod">
+
+Pairing Code
+</string>
+    <string name="enter_the_p">
+
+Enter the paring code on the web portal and continue
+</string>
+    <string name="some_id" translatable="false">
+
+235420
+</string>
+    <string name="continue1">
+
+Continue
+</string>
 
 
 

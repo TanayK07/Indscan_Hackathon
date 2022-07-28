@@ -16,15 +16,17 @@
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/layout_curved.xml" value="0.138" />
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/rectangle_1.xml" value="0.138" />
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/rectangle_2.xml" value="0.138" />
+        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/rectangle_9.xml" value="0.187" />
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/round_red.xml" value="0.138" />
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/scanned_img.xml" value="0.109" />
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/sdmnf.xml" value="0.1" />
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/white_rectangle_1.xml" value="0.11" />
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/drawable/yellowround.xml" value="0.138" />
-        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/layout/activity_main.xml" value="0.37351778656126483" />
+        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/layout/apply_filter.xml" value="0.22" />
+        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/layout/pairingcode.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/layout/scanningscreen.xml" value="0.14666666666666667" />
-        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/layout/uploadingscreen.xml" value="0.22" />
+        <entry key="..\:/Users/Tanay/Desktop/INDScan/app/src/main/res/layout/uploadingscreen.xml" value="0.14666666666666667" />
       </map>
     </option>
   </component>

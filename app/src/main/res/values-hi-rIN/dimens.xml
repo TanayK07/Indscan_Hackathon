@@ -13,6 +13,9 @@
     <dimen name="scandocapplyfilterpg">28sp</dimen>
     <dimen name="none">15sp</dimen>
     <dimen name="acceptscan">25sp</dimen>
+    <dimen name="Pairing">38sp</dimen>
+    <dimen name="connectedpair">14sp</dimen>
+
 
 
 
