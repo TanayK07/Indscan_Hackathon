@@ -131,24 +131,22 @@
         android:textAppearance="@style/connect_to_"
         android:textSize="@dimen/webportal"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_2"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_2"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+        app:layout_constraintEnd_toStartOf="@+id/icons8_qr_c"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_2"
         app:layout_constraintTop_toTopOf="@+id/rectangle_2" />
 
     <ImageView
         android:id="@+id/icons8_qr_c"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginBottom="5dp"
         android:adjustViewBounds="true"
         android:background="@drawable/img_1"
         android:scaleType="center"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_2"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_2"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toEndOf="@+id/connect_to_"
         app:layout_constraintTop_toTopOf="@+id/rectangle_2" />
 
 
