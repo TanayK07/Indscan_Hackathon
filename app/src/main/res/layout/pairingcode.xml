@@ -51,27 +51,24 @@
 
     <TextView
         android:id="@+id/some_id"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginTop="156dp"
 
         android:fontFamily="@font/klartextmono"
         android:gravity="top"
         android:text="@string/some_id"
         android:textAppearance="@style/some_id1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enter_the_p" />
 
     <View
         android:id="@+id/rectangle_9"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="73dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="50dp"

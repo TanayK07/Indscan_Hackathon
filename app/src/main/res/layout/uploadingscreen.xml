@@ -15,146 +15,170 @@
         android:id="@+id/icons8_go_b"
         android:layout_width="75dp"
         android:layout_height="69dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/img_8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/scanned_doc"
+        app:layout_constraintEnd_toEndOf="@+id/scanned_doc"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/scanned_doc"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/scanned_doc"
-        android:layout_width="293dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="92dp"
+
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/clash_display"
         android:gravity="top"
-
         android:text="@string/scanned_doc"
         android:textAppearance="@style/scanned_doc"
         android:textSize="@dimen/ScannedDocs"
+        app:layout_constraintBottom_toTopOf="@+id/docu1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="HardcodedText" />
 
     <View
         android:id="@+id/rectangle_1"
-        android:layout_width="339dp"
-        android:layout_height="167dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="553dp"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/rectangle_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975" />
 
     <TextView
         android:id="@+id/begin_docum"
-        android:layout_width="235dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="584dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
         android:text="@string/scanned_doc"
         android:textAppearance="@style/begin_docum"
         android:textSize="@dimen/ScannedDocs1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_1"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_1"
+        app:layout_constraintVertical_bias="0.105" />
 
     <View
         android:id="@+id/rectangle_2"
 
-        android:layout_width="291dp"
-        android:layout_height="59dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
 
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="634dp"
-
-        android:layout_marginBottom="26dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/rectangle_2"
-        app:layout_constraintBottom_toBottomOf="@id/rectangle_1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_1"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+        app:layout_constraintTop_toBottomOf="@+id/begin_docum"
         app:layout_constraintVertical_bias="0.0">
 
 
     </View>
 
+
     <View
         android:id="@+id/image_11"
         android:layout_width="121.72dp"
         android:layout_height="154dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="141dp"
 
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.778"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/docu2"
-        android:layout_width="121.72dp"
-        android:layout_height="154dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="141dp"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/scanned_doc"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/docu1"
         android:layout_width="121.72dp"
         android:layout_height="154dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="141dp"
+        android:layout_marginStart="48dp"
 
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_1"
+        app:layout_constraintEnd_toStartOf="@+id/image_11"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.299" />
 
     <View
         android:id="@+id/docu3"
-        android:layout_width="121.72dp"
+        android:layout_width="0dp"
         android:layout_height="154dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="333dp"
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_1"
+        app:layout_constraintEnd_toEndOf="@+id/image_11"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/image_11"
+        app:layout_constraintTop_toBottomOf="@+id/image_11"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/docu4"
-        android:layout_width="121.72dp"
+        android:layout_width="0dp"
         android:layout_height="154dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="333dp"
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_1"
+        app:layout_constraintEnd_toEndOf="@+id/docu1"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/docu1"
+        app:layout_constraintTop_toBottomOf="@+id/docu1"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/connect_to_"
-        android:layout_width="227dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="86dp"
-        android:layout_marginTop="651dp"
+        android:layout_width="167dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="20dp"
         android:fontFamily="@font/gilroyb"
         android:gravity="top"
         android:text="@string/send_to_web"
         android:textAppearance="@style/connect_to_"
         android:textSize="@dimen/SendtoWeb"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_2"
+        app:layout_constraintEnd_toStartOf="@+id/icons8_qr_c"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_2"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_2"
+        app:layout_constraintVertical_bias="0.6"
         tools:ignore="HardcodedText" />
 
     <View
         android:id="@+id/icons8_qr_c"
-        android:layout_width="57dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="287dp"
-        android:layout_marginTop="638dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/img_8"
         android:rotationY="180"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_2"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/rectangle_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
