@@ -72,7 +72,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/rectangle_2"
+        android:id="@+id/connect_btn"
         android:layout_width="278dp"
         android:layout_height="71dp"
         android:layout_alignParentStart="true"
@@ -168,7 +168,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="35dp"
         android:background="@drawable/imggreyscale"
-        app:layout_constraintBottom_toTopOf="@+id/rectangle_2"
+        app:layout_constraintBottom_toTopOf="@+id/connect_btn"
         app:layout_constraintStart_toStartOf="@+id/rectangle_123"
         app:layout_constraintTop_toTopOf="@+id/rectangle_123"
         app:layout_constraintVertical_bias="0.285" />
@@ -245,7 +245,7 @@
         android:text="@string/none"
         android:textAppearance="@style/none"
         android:textSize="@dimen/none"
-        app:layout_constraintBottom_toTopOf="@+id/rectangle_2"
+        app:layout_constraintBottom_toTopOf="@+id/connect_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scanimg2" />
 
