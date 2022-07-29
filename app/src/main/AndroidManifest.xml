@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.indscan">
+    package="com.scriptkiddies.indscan">
 
     <application
+        tools:replace="android:theme"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,13 +15,13 @@
         android:theme="@style/Theme.INDScan"
         tools:targetApi="31">
         <activity
-            android:name=".UploadingscreenActivity"
+            android:name="com.scriptkiddies.indscan.UploadingscreenActivity"
             android:exported="false" />
         <activity
-            android:name=".scanningscreenActivity"
+            android:name="com.scriptkiddies.indscan.scanningscreenActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.scriptkiddies.indscan.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

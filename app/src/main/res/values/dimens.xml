@@ -3,7 +3,7 @@
     <dimen name="webportal">18sp</dimen>
     <dimen name="Indscan">65sp</dimen>
     <dimen name="Scansearch">20sp</dimen>
-    <dimen name="Docscan">24sp</dimen>
+    <dimen name="Docscan">20sp</dimen>
     <dimen name="Connected">15sp</dimen>
     <dimen name="disConnected">13sp</dimen>
     <dimen name="ScannedDocs">26sp</dimen>
