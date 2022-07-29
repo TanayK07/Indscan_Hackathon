@@ -130,16 +130,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/docu5"
-        android:layout_width="121.72dp"
-        android:layout_height="154dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="527dp"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/connect_to_"
