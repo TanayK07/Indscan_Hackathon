@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:background="@color/black"
+    android:animateLayoutChanges="true"
     android:layout_height="match_parent">
 
     <androidx.camera.view.PreviewView
@@ -85,7 +86,8 @@
         android:padding="12dp"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
-        android:text="TextView"
+        android:text="@string/biv"
+        android:textAllCaps="true"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
