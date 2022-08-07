@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout4"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#EDEEF1"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/relativeLayout4"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#EDEEF1"
 
 
-    tools:context=".MainActivity">
+tools:context=".FilterActivity">
 
 
     <View
         android:id="@+id/white_rectangle_1"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="600dp"
+        android:layout_height="130dp"
         android:background="@drawable/white_rectangle_1"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_123"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,28 +24,28 @@
 
     <View
         android:id="@+id/icons8_go_b"
-        android:layout_width="0dp"
+        android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="350dp"
         android:layout_marginBottom="5dp"
         android:background="@drawable/img_8"
         app:layout_constraintBottom_toTopOf="@+id/applyfilter"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/white_rectangle_1"
         app:layout_constraintTop_toTopOf="@+id/white_rectangle_1" />
 
     <TextView
         android:id="@+id/applyfilter"
 
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="199dp"
+        android:layout_height="40dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="70dp"
 
         android:layout_marginEnd="220dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="12dp"
         android:fontFamily="@font/clash_display"
         android:gravity="top"
         android:text="@string/apply_filter"
@@ -65,232 +64,208 @@
         android:layout_width="333dp"
         android:layout_height="196dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="511dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/rectangle_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <View
         android:id="@+id/connect_btn"
         android:layout_width="278dp"
         android:layout_height="71dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="600dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/rectangle_2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_123"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_123"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_123"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_123"
+        app:layout_constraintVertical_bias="1.0" />
 
     <View
         android:id="@+id/icons8_go_b3"
-        android:layout_width="51dp"
-        android:layout_height="49dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="270dp"
-        android:layout_marginTop="611dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/img_8"
         android:rotationY="180"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/connect_btn"
+        app:layout_constraintEnd_toEndOf="@+id/connect_btn"
+        app:layout_constraintTop_toTopOf="@+id/connect_btn" />
 
-    <View
-        android:id="@+id/image_16"
+    <ImageView
+        android:id="@+id/imagemain"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="45dp"
-        android:layout_marginBottom="130dp"
-        android:background="@drawable/scanned_img"
+        android:layout_marginBottom="80dp"
+        android:scaleType="centerInside"
+
         app:layout_constraintBottom_toTopOf="@+id/rectangle_123"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/white_rectangle_1"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/white_rectangle_1" />
 
     <View
-        android:id="@+id/icons8_rota"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/right"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="180dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginTop="20dp"
         android:alpha="0.4"
         android:background="@drawable/img_3"
         app:layout_constraintBottom_toTopOf="@+id/rectangle_123"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_16"
+        app:layout_constraintTop_toBottomOf="@+id/imagemain"
         app:layout_constraintVertical_bias="0.0" />
 
     <View
-        android:id="@+id/icons8_rotay"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/left"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginTop="20dp"
         android:alpha="0.4"
         android:background="@drawable/img_3"
         android:rotationY="180"
         app:layout_constraintBottom_toTopOf="@+id/rectangle_123"
-        app:layout_constraintEnd_toStartOf="@+id/icons8_rota"
-        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_16"
-        app:layout_constraintVertical_bias="0.393" />
+        app:layout_constraintTop_toBottomOf="@+id/imagemain"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <View
-        android:id="@+id/image_18"
-        android:layout_width="49dp"
+    <ImageButton
+        android:id="@+id/scangrey"
+        android:layout_width="35dp"
         android:layout_height="34.46dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="530dp"
-        android:background="@drawable/imggreyscale"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@drawable/image24"
+        app:layout_constraintEnd_toStartOf="@+id/scancool"
+        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintStart_toEndOf="@+id/scanpure"
+        app:layout_constraintTop_toTopOf="@+id/scanpure" />
 
-    <View
-        android:id="@+id/scanimg2"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
+    <ImageButton
+        android:id="@+id/scanpure"
+        android:layout_width="35dp"
+        android:layout_height="34.46dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="35dp"
-        android:background="@drawable/imggreyscale"
+        android:background="@drawable/image22"
         app:layout_constraintBottom_toTopOf="@+id/connect_btn"
         app:layout_constraintStart_toStartOf="@+id/rectangle_123"
         app:layout_constraintTop_toTopOf="@+id/rectangle_123"
-        app:layout_constraintVertical_bias="0.285" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <View
-        android:id="@+id/scanimg3"
-        android:layout_width="49dp"
+    <ImageButton
+        android:id="@+id/scancool"
+        android:layout_width="35dp"
         android:layout_height="34.46dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="285dp"
-        android:layout_marginTop="529dp"
-        android:background="@drawable/imggreyscale"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/image26"
+        app:layout_constraintBottom_toTopOf="@+id/connect_btn"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_123"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_123"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <View
-        android:id="@+id/scanimag4"
-        android:layout_width="49dp"
+    <ImageButton
+        android:id="@+id/scanmagiccolor"
+        android:layout_width="35dp"
         android:layout_height="34.46dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="218dp"
-        android:layout_marginTop="529dp"
-        android:background="@drawable/imggreyscale"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/scanned_doc"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_alignParentStart="true"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="35dp"
-        android:fontFamily="@font/gilroysb"
-        android:text="@string/scanned_doc"
-        android:textAlignment="center"
-        android:textAppearance="@style/scanned_doc"
-        android:textSize="@dimen/scandocapplyfilterpg"
-        app:layout_constraintBottom_toTopOf="@+id/image_16"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/white_rectangle_1" />
+        android:background="@drawable/image25"
+        app:layout_constraintEnd_toStartOf="@+id/scancool"
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toEndOf="@+id/scanpure"
+        app:layout_constraintTop_toTopOf="@+id/scangrey" />
 
     <TextView
         android:id="@+id/accept_scan"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="117dp"
-        android:layout_marginTop="624dp"
         android:fontFamily="@font/gilroyb"
         android:text="@string/accept_scan"
         android:textAlignment="center"
         android:textAppearance="@style/accept_scan"
         android:textSize="@dimen/acceptscan"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/connect_btn"
+        app:layout_constraintEnd_toEndOf="@+id/connect_btn"
+        app:layout_constraintStart_toStartOf="@+id/connect_btn"
+        app:layout_constraintTop_toTopOf="@+id/connect_btn" />
 
     <TextView
         android:id="@+id/none"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="86dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
         android:text="@string/none"
         android:textAppearance="@style/none"
         android:textSize="@dimen/none"
-        app:layout_constraintBottom_toTopOf="@+id/connect_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scanimg2" />
+        app:layout_constraintEnd_toEndOf="@+id/scanpure"
+        app:layout_constraintStart_toStartOf="@+id/scanpure"
+        app:layout_constraintTop_toBottomOf="@+id/scanpure" />
 
     <TextView
         android:id="@+id/greyscale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="138dp"
-        android:layout_marginTop="569dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
         android:text="@string/greyscale"
         android:textAppearance="@style/none"
         android:textSize="@dimen/none"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/scangrey"
+        app:layout_constraintStart_toStartOf="@+id/scangrey"
+        app:layout_constraintTop_toBottomOf="@+id/scangrey" />
 
     <TextView
         android:id="@+id/magiccolor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="213dp"
-        android:layout_marginTop="569dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
         android:text="@string/magiccolor"
         android:textAppearance="@style/none"
         android:textSize="@dimen/none"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/scanmagiccolor"
+        app:layout_constraintStart_toStartOf="@+id/scanmagiccolor"
+        app:layout_constraintTop_toBottomOf="@+id/scanmagiccolor" />
 
     <TextView
         android:id="@+id/blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="295dp"
-        android:layout_marginTop="569dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/gilroym"
         android:gravity="top"
-        android:text="@string/cool"
+        android:text="@string/lighten"
         android:textAppearance="@style/none"
         android:textSize="@dimen/none"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/scancool"
+        app:layout_constraintStart_toStartOf="@+id/scancool"
+        app:layout_constraintTop_toBottomOf="@+id/scancool" />
 </androidx.constraintlayout.widget.ConstraintLayout>

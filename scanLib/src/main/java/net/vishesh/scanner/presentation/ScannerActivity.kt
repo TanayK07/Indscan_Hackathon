@@ -1,6 +1,5 @@
 package net.vishesh.scanner.presentation
 
-import android.graphics.Bitmap
 import android.widget.Toast
 import net.vishesh.scanner.R
 import net.vishesh.scanner.exceptions.NullCorners
@@ -17,7 +16,7 @@ class ScannerActivity : BaseScannerActivity() {
         }
     }
 
-    override fun onDocumentAccepted(bitmap: Bitmap) {
+    override fun onDocumentAccepted(bitmap: String) {
     }
 
     override fun onClose() {

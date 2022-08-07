@@ -16,7 +16,7 @@
     <string name="none">नहीं</string>
     <string name="greyscale">ग्रेस्केल</string>
     <string name="magiccolor">"मैजिक कलर "</string>
-    <string name="cool">"कूल "</string>
+    <string name="lighten">"रोशन"</string>
     <string name="pairing_cod">पैरिंग कोड</string>
     <string name="enter_the_p">"वेब पोर्टल पर पैरिंग कोड एंटर करे \nऔर कंटिन्यू बटन दबाएं "</string>
     <string name="continue1">कंटिन्यू</string>

@@ -1,5 +1,6 @@
 package com.scriptkiddies.indscan
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.View
 import android.view.Window
@@ -15,6 +16,8 @@ class UploadingscreenActivity : AppCompatActivity() {
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_FULLSCREEN
                 or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
+        setRequestedOrientation(
+            ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.uploadingscreen)
     }
 }

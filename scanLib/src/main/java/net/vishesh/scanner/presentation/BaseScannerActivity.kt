@@ -4,8 +4,6 @@ import android.animation.LayoutTransition
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.ActivityInfo
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -17,7 +15,6 @@ import net.vishesh.scanner.R
 import net.vishesh.scanner.data.OpenCVLoader
 import net.vishesh.scanner.databinding.ActivityScannerBinding
 import net.vishesh.scanner.extensions.outputDirectory
-import java.io.File
 
 abstract class BaseScannerActivity : AppCompatActivity() {
     private lateinit var viewModel: ScannerViewModel
@@ -29,12 +26,12 @@ abstract class BaseScannerActivity : AppCompatActivity() {
                 val bitmapUri =
                     result.data?.extras?.getString("croppedPath") ?: error("invalid path")
 
-                val image = File(bitmapUri)
-                val bmOptions = BitmapFactory.Options()
-                val bitmap = BitmapFactory.decodeFile(image.absolutePath, bmOptions)
-                onDocumentAccepted(bitmap)
+                //val image = File(bitmapUri)
+                //val bmOptions = BitmapFactory.Options()
+                //val bitmap = BitmapFactory.decodeFile(image.absolutePath, bmOptions)
+                onDocumentAccepted(bitmapUri)
 
-                image.delete()
+                //image.delete()
             } else {
                 viewModel.onViewCreated(OpenCVLoader(this), this, binding.viewFinder)
             }
@@ -44,12 +41,10 @@ abstract class BaseScannerActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
-        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_FULLSCREEN
-                or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
+                        View.SYSTEM_UI_FLAG_FULLSCREEN or
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //triggerFullscreen()
 
@@ -79,13 +74,15 @@ abstract class BaseScannerActivity : AppCompatActivity() {
                 "detectedCorners",
                 if (viewModel.corners.value != null) ArrayList(viewModel.corners.value!!.pointsToPair()) else null
             )
+            var oldSizeWidth: Double? = if (viewModel.corners.value != null) viewModel.corners.value!!.size.width else null
             intent.putExtra(
                 "oldSizeWidth",
-                if (viewModel.corners.value != null) viewModel.corners.value!!.size.width else null
+                oldSizeWidth
             )
+            var oldSizeHeight: Double? = if (viewModel.corners.value != null) viewModel.corners.value!!.size.height else null
             intent.putExtra(
                 "oldSizeHeight",
-                if (viewModel.corners.value != null) viewModel.corners.value!!.size.height else null
+                oldSizeHeight
             )
 
             resultLauncher.launch(intent)
@@ -280,7 +277,7 @@ abstract class BaseScannerActivity : AppCompatActivity() {
     }
 
     abstract fun onError(throwable: Throwable)
-    abstract fun onDocumentAccepted(bitmap: Bitmap)
+    abstract fun onDocumentAccepted(bitmap: String)
     abstract fun onClose()
 }
 

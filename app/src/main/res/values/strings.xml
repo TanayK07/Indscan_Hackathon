@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">IndScan</string>
-<string name="begin_docum">Begin document scan</string>
+    <string name="begin_docum">Begin document scan</string>
     <string name="scanning_an">Scanning and Indexing  Documents  Simplified </string>
     <string name="connected_t">Connected to</string>
     <string name="disconnect">DISCONNECT</string>
@@ -11,7 +11,7 @@
     <string name="none">NONE</string>
     <string name="greyscale">GREYSCALE</string>
     <string name="magiccolor">MAGIC COLOR</string>
-    <string name="cool">COOL</string>
+    <string name="lighten">LIGHTEN</string>
     <string name="pairing_cod">
 
 Pairing Code
@@ -30,9 +30,7 @@ Continue
 </string>
 
 
-
     <string name="accept_scan">Accept Scan</string>
-
 
 
     <string name="indscan">IndScan</string>

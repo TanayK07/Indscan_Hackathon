@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.scriptkiddies.indscan">
+    package="com.scriptkiddies.indscan" >
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -10,7 +10,6 @@
     <uses-feature android:name="android.hardware.camera.any" />
 
     <application
-        tools:replace="android:theme"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -19,20 +18,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.INDScan"
-
-        tools:targetApi="31">
+        tools:replace="android:theme"
+        tools:targetApi="31" >
         <activity
-            android:screenOrientation="portrait"
-            android:name="com.scriptkiddies.indscan.UploadingscreenActivity"
+            android:name=".FilterActivity"
             android:exported="false" />
         <activity
-            android:screenOrientation="portrait"
-            android:name="com.scriptkiddies.indscan.scanningscreenActivity"
-            android:exported="false" />
+            android:name=".UploadingscreenActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
-            android:screenOrientation="portrait"
-            android:name="com.scriptkiddies.indscan.MainActivity"
-            android:exported="true">
+            android:name=".scanningscreenActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
