@@ -327,6 +327,7 @@ class CropperModel : ViewModel() {
                         isRotated = false
                     }
                     bitmapToCrop.value = bmp!!
+
                 }
             }
     }

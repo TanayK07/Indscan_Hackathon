@@ -95,7 +95,7 @@
         app:layout_constraintStart_toEndOf="@+id/ellipse_1" />
 
     <View
-        android:id="@+id/icons8_go_b"
+        android:id="@+id/back"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/img_8"

@@ -97,6 +97,10 @@ class FilterActivity : AppCompatActivity() {
                 (imageView as ImageView?)?.setImageBitmap(converted)
             }
         }
+        var back = findViewById<View>(R.id.back)
+        back.setOnClickListener {
+            finish()
+        }
 
 
 

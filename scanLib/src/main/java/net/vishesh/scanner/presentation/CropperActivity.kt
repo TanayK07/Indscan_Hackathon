@@ -1,11 +1,12 @@
 package net.vishesh.scanner.presentation
 
+
+
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
-
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -14,8 +15,8 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
-import net.vishesh.scanner.databinding.ActivityCropperBinding
 import net.vishesh.scanner.data.Corners
+import net.vishesh.scanner.databinding.ActivityCropperBinding
 import net.vishesh.scanner.extensions.outputDirectory
 import net.vishesh.scanner.extensions.toByteArray
 import net.vishesh.scanner.extensions.waitForLayout
@@ -48,7 +49,7 @@ class CropperActivity : AppCompatActivity() {
         if (extras != null) {
             bitmapUri = intent.extras?.getString("lastUri")?.toUri() ?: error("invalid uri")
 
-            val list = if(intent.extras?.getSerializable("detectedCorners")!=null) intent.extras?.getSerializable("detectedCorners") as List<Pair<Double,Double>> else null
+            val list = if(intent.extras?.getSerializable("detectedCorners")!=null) intent.extras?.getSerializable("detectedCorners") as List<Pair<Double, Double>> else null
             val bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, bitmapUri)
 
             if(list!=null){
@@ -106,21 +107,27 @@ class CropperActivity : AppCompatActivity() {
                     bitmapToCrop, this
                 )
             }
-            binding.cropResultWrap.visibility = View.VISIBLE
+            cropModel.bitmapToCrop.observe(this) {
+                it?.let { bitmap ->
+                    val file = File(outputDirectory, "${UUID.randomUUID()}.jpg")
+                    val outputStream = FileOutputStream(file)
+                    outputStream.write(cropModel.bitmapToCrop.value?.toByteArray())
+                    outputStream.close()
+
+                    val resultIntent = Intent()
+                    resultIntent.putExtra("croppedPath", file.absolutePath)
+                    setResult(RESULT_OK, resultIntent)
+
+                    finish()
+
+                }}
+
+            //binding.cropResultWrap.visibility = View.VISIBLE
         }
 
         binding.confirmCropResult.setOnClickListener {
 
-            val file = File(outputDirectory, "${UUID.randomUUID()}.jpg")
-            val outputStream = FileOutputStream(file)
-            outputStream.write(cropModel.bitmapToCrop.value?.toByteArray())
-            outputStream.close()
 
-            val resultIntent = Intent()
-            resultIntent.putExtra("croppedPath", file.absolutePath)
-            setResult(RESULT_OK, resultIntent)
-
-            finish()
         }
 
         binding.cropPreview.setOnTouchListener { view: View, motionEvent: MotionEvent ->
