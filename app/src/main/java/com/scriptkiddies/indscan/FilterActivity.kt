@@ -1,6 +1,7 @@
 package com.scriptkiddies.indscan
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -11,6 +12,7 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.*
@@ -195,6 +197,11 @@ class FilterActivity : AppCompatActivity() {
                             Log.d("VOLLEY", it)
                             this@FilterActivity.runOnUiThread(java.lang.Runnable {
                                 loading.visibility = View.GONE
+                                val intent = Intent(applicationContext, scanningscreenActivity::class.java)
+                                intent.putExtra("ipcode", ipcode)
+
+                                intent.putExtra("pairingcode", pairingcode)
+                                startActivity(intent)
                             })
                             fun onResponse(response: String?) {
 
