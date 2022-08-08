@@ -36,8 +36,10 @@
         <entry key="app/src/main/res/layout/scanningscreen.xml" value="0.18128814697265627" />
         <entry key="app/src/main/res/layout/scanningscreen_backup.xml" value="0.13935185185185187" />
         <entry key="app/src/main/res/layout/uploadingscreen.xml" value="0.1782694498697917" />
+        <entry key="scanLib/src/main/res/drawable/ic_check_24.xml" value="0.15" />
         <entry key="scanLib/src/main/res/drawable/round_rect_shape.xml" value="0.1665" />
         <entry key="scanLib/src/main/res/drawable/rounded_corner.xml" value="0.1" />
+        <entry key="scanLib/src/main/res/layout/activity_cropper.xml" value="0.16995849609375002" />
         <entry key="scanLib/src/main/res/layout/activity_scanner.xml" value="0.2548553466796875" />
         <entry key="scanLib/src/main/res/layout/loading.xml" value="0.1486111111111111" />
       </map>

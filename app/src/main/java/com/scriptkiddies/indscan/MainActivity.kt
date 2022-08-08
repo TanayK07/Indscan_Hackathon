@@ -4,14 +4,17 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.Window
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 
 class MainActivity : AppCompatActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -25,11 +28,15 @@ class MainActivity : AppCompatActivity() {
             ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main)
         checkRunTimePermission();
-        val btn:View = findViewById(R.id.connect_btn)
+        val btn:View = findViewById(R.id.accept_scan_btn)
         btn.setOnClickListener {
-            val intent = Intent(this, scanningscreenActivity::class.java)
+            val intent = Intent(this, PairingCode::class.java)
             startActivity(intent)
         }
+        //var decrypt: Decrypt = Decrypt()
+        //val decryptedIP = decrypt.decode("GNMai6EzGmKNZPWZIBx0AQ==","2753621234567891")
+        //Log.d("ipcode",decryptedIP)
+
     }
     private fun checkRunTimePermission() {
         val permissionArrays =

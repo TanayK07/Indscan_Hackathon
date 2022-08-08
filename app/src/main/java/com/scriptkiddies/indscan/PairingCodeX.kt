@@ -1,6 +1,5 @@
 package com.scriptkiddies.indscan
 
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.util.Log
@@ -11,9 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import io.github.g00fy2.quickie.QRResult
 import io.github.g00fy2.quickie.ScanQRCode
 
-class PairingCode : AppCompatActivity() {
+class PairingCodeX : AppCompatActivity() {
     val scanQrCode = registerForActivityResult(ScanQRCode(), ::handleResult)
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -25,13 +23,10 @@ class PairingCode : AppCompatActivity() {
             ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_pairing_code)
-        var codeTE: TextView = findViewById(R.id.code)
+        var codeTE:TextView = findViewById(R.id.code)
         //generate random six digit code
-
-        codeTE.text = (100000..999999).shuffled().last().toString()
-        findViewById<View>(R.id.continue_btn).setOnClickListener {
-            scanQrCode.launch(null)
-        }
+        var code = (100000..999999).random().toString()
+        codeTE.text = code
     }
     fun handleResult(result: QRResult) {
         val text = when (result) {
@@ -42,16 +37,10 @@ class PairingCode : AppCompatActivity() {
         }
         if(text!=""){
             //log the code
-            // var decrypt: Decrypt = Decrypt()
+                // var decrypt: Decrypt = Decrypt()
             //        //decrypt.decode()
             //        //Log.d("decrypt", decrypt.decode())
-
-            //start scan activity
-            val intent = Intent(this, scanningscreenActivity::class.java)
-            intent.putExtra("ipcode", text)
-            var code = findViewById<TextView>(R.id.code).text.toString()
-            intent.putExtra("pairingcode", code)
-            startActivity(intent)
+            Log.d("ipcode",text)
         }
     }
 }

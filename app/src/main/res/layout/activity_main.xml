@@ -74,7 +74,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
-        android:id="@+id/connect_btn"
+        android:id="@+id/accept_scan_btn"
         android:layout_width="0dp"
 
         android:layout_height="0dp"
@@ -130,10 +130,10 @@
         android:textAlignment="center"
         android:textAppearance="@style/connect_to_"
         android:textSize="@dimen/webportal"
-        app:layout_constraintBottom_toBottomOf="@+id/connect_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/accept_scan_btn"
         app:layout_constraintEnd_toStartOf="@+id/icons8_qr_c"
-        app:layout_constraintStart_toStartOf="@+id/connect_btn"
-        app:layout_constraintTop_toTopOf="@+id/connect_btn" />
+        app:layout_constraintStart_toStartOf="@+id/accept_scan_btn"
+        app:layout_constraintTop_toTopOf="@+id/accept_scan_btn" />
 
     <ImageView
         android:id="@+id/icons8_qr_c"
@@ -145,9 +145,9 @@
         android:adjustViewBounds="true"
         android:background="@drawable/img_1"
         android:scaleType="center"
-        app:layout_constraintBottom_toBottomOf="@+id/connect_btn"
-        app:layout_constraintEnd_toEndOf="@+id/connect_btn"
-        app:layout_constraintTop_toTopOf="@+id/connect_btn" />
+        app:layout_constraintBottom_toBottomOf="@+id/accept_scan_btn"
+        app:layout_constraintEnd_toEndOf="@+id/accept_scan_btn"
+        app:layout_constraintTop_toTopOf="@+id/accept_scan_btn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
