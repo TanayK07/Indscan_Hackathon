@@ -7,15 +7,20 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Base64
 import android.util.Log
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.android.volley.*
+import com.android.volley.AuthFailureError
+import com.android.volley.NetworkResponse
+import com.android.volley.Response
+import com.android.volley.VolleyError
 import com.android.volley.toolbox.HttpHeaderParser
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
@@ -33,10 +38,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import org.json.JSONException
-import org.json.JSONObject
 import java.io.ByteArrayOutputStream
 import java.io.File
-import java.io.UnsupportedEncodingException
 
 
 class FilterActivity : AppCompatActivity() {
@@ -72,6 +75,18 @@ class FilterActivity : AppCompatActivity() {
         val encrtptedIP = json.key("ip").stringValue();
         var decrypt: Decrypt = Decrypt()
         val decryptedIP = decrypt.decode(encrtptedIP,pairingcode+pairingcode+"4132")
+
+        var activityContext = this
+
+        val mainHandler = Handler(Looper.getMainLooper())
+        val checkConnection = checkConnection(activityContext)
+        mainHandler.post(object : Runnable {
+            override fun run() {
+                checkConnection.isConnectedToConsole(activityContext,decryptedIP)
+                if(!checkConnection.redirected)
+                    mainHandler.postDelayed(this, 1000)
+            }
+        })
 
         var converted: Bitmap? = gb1
         val image = InputImage.fromBitmap(gb1!!, 0)
@@ -202,6 +217,7 @@ class FilterActivity : AppCompatActivity() {
 
                                 intent.putExtra("pairingcode", pairingcode)
                                 startActivity(intent)
+                                finish()
                             })
                             fun onResponse(response: String?) {
 
@@ -209,6 +225,16 @@ class FilterActivity : AppCompatActivity() {
                             }
                         }, Response.ErrorListener() {
                             Log.d("VOLLEY", it.toString())
+                            Toast.makeText(
+                                applicationContext,
+                                "Error connecting to web console, make sure you are connected on the same network",
+                                Toast.LENGTH_LONG
+                            ).show()
+
+                            //Redirect to MainActivity if error occurs
+                            val intent = Intent(applicationContext, MainActivity::class.java)
+                            startActivity(intent)
+                            finish()
                             fun onErrorResponse(error: VolleyError) {
                                 Log.d("VOLLEY", error.toString())
                             }
@@ -313,8 +339,6 @@ class FilterActivity : AppCompatActivity() {
             finish()
         }
 
-
-
-
     }
+
 }

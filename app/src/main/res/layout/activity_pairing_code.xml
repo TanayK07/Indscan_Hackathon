@@ -41,7 +41,7 @@
         android:fontFamily="@font/gilroysb"
         android:gravity="center_horizontal|top"
         android:text="@string/enter_the_p"
-        android:textAppearance="@style/enter_the_p"
+
         android:textSize="@dimen/connectedpair"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

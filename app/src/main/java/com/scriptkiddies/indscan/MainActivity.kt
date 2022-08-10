@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, PairingCode::class.java)
             startActivity(intent)
         }
+
         //var decrypt: Decrypt = Decrypt()
         //val decryptedIP = decrypt.decode("GNMai6EzGmKNZPWZIBx0AQ==","2753621234567891")
         //Log.d("ipcode",decryptedIP)

@@ -2,13 +2,19 @@ package com.scriptkiddies.indscan
 
 import android.content.Intent
 import android.content.pm.ActivityInfo
+import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
+import androidx.annotation.RequiresApi
+import eu.amirs.JSON
 import net.vishesh.scanner.presentation.BaseScannerActivity
 
 class scanningscreenActivity : BaseScannerActivity() {
     lateinit var ipcode: String
     lateinit var pairingCode: String
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.decorView.systemUiVisibility = (
@@ -21,6 +27,21 @@ class scanningscreenActivity : BaseScannerActivity() {
         //get ipcode from intent
         ipcode = intent.getStringExtra("ipcode")!!
         pairingCode = intent.getStringExtra("pairingcode")!!
+        val json = JSON(ipcode)
+        val encrtptedIP = json.key("ip").stringValue();
+        var decrypt: Decrypt = Decrypt()
+        val decryptedIP = decrypt.decode(encrtptedIP,pairingCode+pairingCode+"4132")
+        var activityContext = this
+
+        val mainHandler = Handler(Looper.getMainLooper())
+        val checkConnection = checkConnection(activityContext)
+        mainHandler.post(object : Runnable {
+            override fun run() {
+                checkConnection.isConnectedToConsole(activityContext,decryptedIP)
+                if(!checkConnection.redirected)
+                    mainHandler.postDelayed(this, 1000)
+            }
+        })
 
     }
 
@@ -35,6 +56,7 @@ class scanningscreenActivity : BaseScannerActivity() {
         i.putExtra("pairingcode", pairingCode)
         i.putExtra("image", bitmap )
         startActivity(i)
+        finish()
     }
 
     override fun onClose() {
