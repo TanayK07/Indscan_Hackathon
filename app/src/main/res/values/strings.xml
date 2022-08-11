@@ -30,5 +30,13 @@ Continue
     <string name="indscan">IndScan</string>
     <string name="connect_to_">Connect to web portal</string>
 
+    <string name="en" translatable="false">
+
+EN
+</string>
+    <string name="hindi" translatable="false">
+हिन्दी
+</string>
+
 
 </resources>

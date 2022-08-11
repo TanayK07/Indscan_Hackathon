@@ -8,6 +8,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.view.Window
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -32,6 +33,10 @@ class MainActivity : AppCompatActivity() {
         btn.setOnClickListener {
             val intent = Intent(this, PairingCode::class.java)
             startActivity(intent)
+        }
+        val hindiswitch:TextView=findViewById(R.id.hindi)
+        hindiswitch.setOnClickListener {
+
         }
 
         //var decrypt: Decrypt = Decrypt()
