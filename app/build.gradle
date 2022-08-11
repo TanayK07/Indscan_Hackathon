@@ -55,6 +55,7 @@ dependencies {
     implementation 'com.airbnb.android:lottie:5.2.0'
     implementation 'com.android.volley:volley:1.2.1'
     implementation 'com.github.amirdew:JSON:v1.0.0'
+    implementation 'com.zeugmasolutions.localehelper:locale-helper-android:1.5.1'
 
 
 

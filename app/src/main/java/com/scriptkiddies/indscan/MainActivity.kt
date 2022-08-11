@@ -6,16 +6,20 @@ import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.Window
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
+import com.zeugmasolutions.localehelper.LocaleAwareCompatActivity
+import com.zeugmasolutions.localehelper.Locales
+import java.util.*
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : LocaleAwareCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -34,9 +38,26 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, PairingCode::class.java)
             startActivity(intent)
         }
-        val hindiswitch:TextView=findViewById(R.id.hindi)
-        hindiswitch.setOnClickListener {
+        val current: Locale = resources.configuration.locale
+        Log.d("Current Locale", current.toString())
+        if (current.toString() == "en_US") {
+            findViewById<TextView>(R.id.english).setTextColor(resources.getColor(R.color.black))
+            findViewById<TextView>(R.id.hindi).setTextColor(resources.getColor(R.color.semiblack))
+        }
+        else {
+            findViewById<TextView>(R.id.english).setTextColor(resources.getColor(R.color.semiblack))
+            findViewById<TextView>(R.id.hindi).setTextColor(resources.getColor(R.color.black))
+        }
 
+        findViewById<View>(R.id.english).setOnClickListener {
+            updateLocale(Locales.English)
+            findViewById<TextView>(R.id.english).setTextColor(resources.getColor(R.color.black))
+            findViewById<TextView>(R.id.hindi).setTextColor(resources.getColor(R.color.semiblack))
+        }
+        findViewById<View>(R.id.hindi).setOnClickListener {
+            updateLocale(Locales.Hindi)
+            findViewById<TextView>(R.id.english).setTextColor(resources.getColor(R.color.semiblack))
+            findViewById<TextView>(R.id.hindi).setTextColor(resources.getColor(R.color.black))
         }
 
         //var decrypt: Decrypt = Decrypt()
