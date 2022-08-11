@@ -30,7 +30,7 @@ class checkConnection(context: Context) {
                         "HttpClient",
                         "success! response: $response"
                     )
-                    if(response.toString().contains("true")==false){
+                    if(response.toString().contains("false")==true){
                         Toast.makeText(
                             context,
                             "Disconnected from console",
