@@ -42,29 +42,6 @@
 
 
     <TextView
-        android:id="@+id/en"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="5dp"
-
-        android:clickable="true"
-        android:fontFamily="@font/gilroyb"
-        android:gravity="top"
-        android:text="@string/en"
-        android:textAppearance="@style/en"
-        app:layout_constraintBottom_toTopOf="@+id/hindi"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.583"
-        app:layout_constraintStart_toEndOf="@+id/indscan"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
         android:id="@+id/scanning_an"
         android:layout_width="237dp"
 
@@ -81,24 +58,6 @@
         app:layout_constraintStart_toStartOf="@+id/indscan"
         app:layout_constraintTop_toBottomOf="@+id/indscan"
         app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/hindi"
-        android:layout_width="34dp"
-        android:layout_height="27dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
-        android:gravity="top"
-        android:text="@string/hindi"
-        android:textAppearance="@style/hindi"
-        app:layout_constraintBottom_toTopOf="@+id/image_1"
-        app:layout_constraintEnd_toEndOf="@+id/en"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/en"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.456" />
 
     <View
         android:id="@+id/rectangle_1"
@@ -160,7 +119,7 @@
     <TextView
         android:id="@+id/connect_to_"
         android:layout_width="197dp"
-        android:layout_height="26dp"
+        android:layout_height="28dp"
 
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"

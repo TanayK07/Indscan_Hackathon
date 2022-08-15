@@ -94,7 +94,7 @@ class FilterActivity : AppCompatActivity() {
         //OCR
         val recognizerEnglish = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
         val recognizerHindi = TextRecognition.getClient(DevanagariTextRecognizerOptions.Builder().build())
-
+        var entityJsonString = ""
         var hindiText = ""
         var englishText = ""
 
@@ -114,6 +114,24 @@ class FilterActivity : AppCompatActivity() {
                     }
                 }
                 Log.d(TAG, "EnglishText: $englishText")
+                /*
+                 Entity extraction types:
+                    Address
+                    Date time
+                    Email
+                    Phone number
+                    Money
+                    URL
+                    Tracking number
+                * */
+                var address = mutableListOf<String>()
+                var date = mutableListOf<String>()
+                var email = mutableListOf<String>()
+                var phone = mutableListOf<String>()
+                var money = mutableListOf<String>()
+                var url = mutableListOf<String>()
+                var tracking = mutableListOf<String>()
+
                 //entity extraction
                 val entityExtractor =
                     EntityExtraction.getClient(
@@ -131,13 +149,124 @@ class FilterActivity : AppCompatActivity() {
                             .annotate(params)
                             .addOnSuccessListener {
                                 // Annotation process was successful, you can parse the EntityAnnotations list here.
-                                for (entityAnnotation in it) {
-                                    val entities: List<Entity> = entityAnnotation.entities
-                                    for (entity in entities) {
-                                        Log.d(TAG, "Entity: " + entity + " - " + entity.type)
+
+                                    for (entitiy in it) {
+                                        val listOfEntities = entitiy.entities
+                                        for (entity in listOfEntities) {
+
+                                            when (entity.type) {
+                                                Entity.TYPE_ADDRESS -> {
+                                                    //binding.textView.append("address " + entitiy.annotatedText + "\n")
+                                                    address.add(entitiy.annotatedText)
+                                                }
+                                                Entity.TYPE_DATE_TIME -> {
+                                                    //binding.textView.append("date time " + entitiy.annotatedText + "\n")
+                                                    date.add(entitiy.annotatedText)
+                                                }
+                                                Entity.TYPE_EMAIL -> {
+                                                    //binding.textView.append("email " + entitiy.annotatedText + "\n")
+                                                    email.add(entitiy.annotatedText)
+                                                }
+
+
+                                                Entity.TYPE_MONEY -> {
+                                                    //binding.textView.append("money " + entitiy.annotatedText + "\n")
+                                                    money.add(entitiy.annotatedText)
+                                                }
+
+                                                Entity.TYPE_PHONE -> {
+                                                    //binding.textView.append("phone " + entitiy.annotatedText + "\n")
+                                                    phone.add(entitiy.annotatedText)
+
+                                                }
+                                                Entity.TYPE_TRACKING_NUMBER -> {
+                                                    //binding.textView.append("tracking number " + entitiy.annotatedText + "\n")
+                                                    tracking.add(entitiy.annotatedText)
+                                                }
+                                                Entity.TYPE_URL -> {
+                                                    //binding.textView.append("type url " + entitiy.annotatedText + "\n")
+                                                    url.add(entitiy.annotatedText)
+                                                }
+                                                else -> {
+                                                    //binding.textView.append(entitiy.annotatedText + "\n")
+                                                }
+                                            }
+
+
+
                                     }
 
                                 }
+
+                            // log all the entities
+                                Log.d(TAG, "Entity Address: $address")
+                                Log.d(TAG, "Entity Date: $date")
+                                Log.d(TAG, "Entity Email: $email")
+                                Log.d(TAG, "Entity Money: $money")
+                                Log.d(TAG, "Entity Phone: $phone")
+                                Log.d(TAG, "Entity Tracking: $tracking")
+                                Log.d(TAG, "Entity URL: $url")
+                                //generate json
+                                /*
+                                Sample json creation
+
+                                  JSON generatedJsonObject = JSON.create(
+                                        JSON.dic(
+                                                "someKey", "someValue",
+                                                "someArrayKey", JSON.array(
+                                                        "first",
+                                                        1,
+                                                        2,
+                                                        JSON.dic(
+                                                                "emptyArrayKey", JSON.array()
+                                                        )
+                                                )
+                                        )
+                                );
+                                */
+                                var addressJSONArray = JSON.array()
+                                for(addressX in address){
+                                    addressJSONArray.put(addressX)
+                                }
+                                var dateJSONArray = JSON.array()
+                                for(dateX in date){
+                                    dateJSONArray.put(dateX)
+                                }
+                                var emailJSONArray = JSON.array()
+                                for(emailX in email){
+                                    emailJSONArray.put(emailX)
+                                }
+                                var moneyJSONArray = JSON.array()
+                                for(moneyX in money){
+                                    moneyJSONArray.put(moneyX)
+                                }
+                                var phoneJSONArray = JSON.array()
+                                for(phoneX in phone){
+                                    phoneJSONArray.put(phoneX)
+                                }
+                                var trackingJSONArray = JSON.array()
+                                for(trackingX in tracking){
+                                    trackingJSONArray.put(trackingX)
+                                }
+                                var urlJSONArray = JSON.array()
+                                for(urlX in url){
+                                    urlJSONArray.put(urlX)
+                                }
+                                var json = JSON.create(
+                                    JSON.dic(
+                                        "address", addressJSONArray,
+                                        "date", dateJSONArray,
+                                        "email", emailJSONArray,
+                                        "money", moneyJSONArray,
+                                        "phone", phoneJSONArray,
+                                        "tracking", trackingJSONArray,
+                                        "url", urlJSONArray
+                                    )
+                                )
+
+                                entityJsonString = json.toString()
+                                Log.d(TAG, "Entity Json: $entityJsonString")
+
 
                             }
                             .addOnFailureListener {
@@ -177,6 +306,7 @@ class FilterActivity : AppCompatActivity() {
                 // Task failed with an exception
                 // ...
             }
+
         var loading = findViewById<View>(R.id.progress)
         loading.visibility = View.GONE
         findViewById<View>(R.id.accept_scan_btn).setOnClickListener {
@@ -194,7 +324,7 @@ class FilterActivity : AppCompatActivity() {
                             "docImage", encoded,
                             "englishText", englishText,
                             "hindiText", hindiText,
-
+                            "entities", entityJsonString
                             )
                     )
                 )
