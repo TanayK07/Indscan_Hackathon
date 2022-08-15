@@ -174,7 +174,7 @@
         android:layout_marginEnd="15dp"
         android:fontFamily="@font/gilroysb"
         android:padding="10dp"
-        android:text="HI"
+        android:text="हिन्दी"
         android:textColor="#50000000"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/indscan"
