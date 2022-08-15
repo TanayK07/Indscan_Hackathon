@@ -6,7 +6,6 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.View
 import androidx.annotation.RequiresApi
 import eu.amirs.JSON
 import net.vishesh.scanner.presentation.BaseScannerActivity
@@ -17,10 +16,10 @@ class scanningscreenActivity : BaseScannerActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        window.decorView.systemUiVisibility = (
+        /*window.decorView.systemUiVisibility = (
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
                         View.SYSTEM_UI_FLAG_FULLSCREEN or
-                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)*/
         setRequestedOrientation(
             ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 

@@ -41,10 +41,10 @@ class CropperActivity : AppCompatActivity() {
         //triggerFullscreen()
         binding = ActivityCropperBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        window.decorView.systemUiVisibility = (
+        /*window.decorView.systemUiVisibility = (
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
                         View.SYSTEM_UI_FLAG_FULLSCREEN or
-                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)*/
         val extras = intent.extras
         if (extras != null) {
             bitmapUri = intent.extras?.getString("lastUri")?.toUri() ?: error("invalid uri")

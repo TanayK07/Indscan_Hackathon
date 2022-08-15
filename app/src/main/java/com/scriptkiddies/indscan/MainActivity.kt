@@ -24,10 +24,10 @@ class MainActivity : LocaleAwareCompatActivity() {
 
         super.onCreate(savedInstanceState)
 
-        window.decorView.systemUiVisibility = (
+        /*window.decorView.systemUiVisibility = (
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
-                View.SYSTEM_UI_FLAG_FULLSCREEN or
-                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
+                        View.SYSTEM_UI_FLAG_FULLSCREEN or
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)*/
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         setRequestedOrientation(
             ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
