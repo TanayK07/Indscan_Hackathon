@@ -17,6 +17,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.isDigitsOnly
 import com.android.volley.AuthFailureError
 import com.android.volley.NetworkResponse
 import com.android.volley.Response
@@ -98,12 +99,50 @@ class FilterActivity : AppCompatActivity() {
         var hindiText = ""
         var englishText = ""
 
+        var isAadharCard = false
+        var isPanCard = false
+
+        //boolean utils aadhar card
+        var aadharTextBool = false
+        var aadharNumberBool = false
+
+        var aadharNumber = ""
+
+        //boolean utils pan card
+        var panTextBool = false
+        var panNumberBool = false
+
+        var panNumber = ""
+
         recognizerEnglish.process(image)
             .addOnSuccessListener { result ->
                 // Task completed successfully
                 val resultText = result.text
                 for (block in result.textBlocks) {
                     val blockText = block.text
+
+                    var tmp = blockText.replace(" ", "")
+
+
+                    if(tmp.isDigitsOnly() && tmp.length == 12 && AadhaarUtil.isAadhaarNumberValid(tmp)){
+                        aadharNumberBool = true
+                        aadharNumber = tmp
+                    }
+                    if(blockText.contains("INCOME TAX DEPARTMENT")){
+                        panTextBool = true
+                    }
+                    val regex = Regex("[A-Z]{5}[0-9]{4}[A-Z]{1}")
+                    val matches = regex.findAll(blockText)
+                    val names = matches.map { it.groupValues[0] }.joinToString()
+                    if(names.isNotEmpty() && names.length == 10){
+                        panNumberBool = true
+                        panNumber = names
+                    }
+
+
+
+
+
                     val blockCornerPoints = block.cornerPoints
                     val blockFrame = block.boundingBox
                     if(englishText.isEmpty()){
@@ -284,12 +323,32 @@ class FilterActivity : AppCompatActivity() {
                 // Task failed with an exception
                 // ...
             }
+
+        fun String.intOrString() = try { // returns Any
+            toInt()
+        } catch(e: NumberFormatException) {
+            this
+        }
+
+        fun countOccurrences(s: String, ch: Char): Int {
+            return s.filter { it == ch }.count()
+        }
         recognizerHindi.process(image)
             .addOnSuccessListener { result ->
                 // Task completed successfully
+
                 val resultText = result.text
                 for (block in result.textBlocks) {
                     val blockText = block.text
+
+                    if(blockText.contains("आधार")){
+                        aadharTextBool = true
+                    }
+
+
+
+
+
                     val blockCornerPoints = block.cornerPoints
                     val blockFrame = block.boundingBox
                     if(hindiText.isEmpty()){
@@ -300,6 +359,11 @@ class FilterActivity : AppCompatActivity() {
                     }
 
                 }
+                Log.d(TAG, "EnglishText HindiText: $hindiText")
+
+
+
+
                 // ...
             }
             .addOnFailureListener { e ->
@@ -310,6 +374,18 @@ class FilterActivity : AppCompatActivity() {
         var loading = findViewById<View>(R.id.progress)
         loading.visibility = View.GONE
         findViewById<View>(R.id.accept_scan_btn).setOnClickListener {
+            if(aadharTextBool && aadharNumberBool){
+                isAadharCard = true
+            }
+            if(panTextBool && panNumberBool){
+                isPanCard = true
+            }
+            //Log aadharcard
+            Log.d(TAG, "AadharCard: $isAadharCard")
+
+            //Log pancard
+            Log.d(TAG, "PanCard: $isPanCard")
+
             loading.visibility = View.VISIBLE
             GlobalScope.launch(Dispatchers.IO) {
                 //convert converted to base64 image
@@ -324,7 +400,11 @@ class FilterActivity : AppCompatActivity() {
                             "docImage", encoded,
                             "englishText", englishText,
                             "hindiText", hindiText,
-                            "entities", entityJsonString
+                            "entities", entityJsonString,
+                            "isAadharCard", isAadharCard,
+                            "aadharNumber", aadharNumber,
+                            "isPanCard", isPanCard,
+                            "panNumber", panNumber
                             )
                     )
                 )
