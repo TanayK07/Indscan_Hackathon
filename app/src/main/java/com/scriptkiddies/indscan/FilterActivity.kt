@@ -17,7 +17,6 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.text.isDigitsOnly
 import com.android.volley.AuthFailureError
 import com.android.volley.NetworkResponse
 import com.android.volley.Response
@@ -121,12 +120,21 @@ class FilterActivity : AppCompatActivity() {
                 for (block in result.textBlocks) {
                     val blockText = block.text
 
-                    var tmp = blockText.replace(" ", "")
+                    /*var tmp = blockText.replace(" ", "")
 
 
                     if(tmp.isDigitsOnly() && tmp.length == 12 && AadhaarUtil.isAadhaarNumberValid(tmp)){
                         aadharNumberBool = true
                         aadharNumber = tmp
+                    }*/
+                    var aadharRegex = Regex("[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}")
+                    val aadharmatches = aadharRegex.findAll(blockText)
+                    for (match in aadharmatches) {
+                        //Log.d("aadhar", "aahdar "+match.groupValues[0].replace(" ","")+" "+AadhaarUtil.isAadhaarNumberValid(match.groupValues[0].replace(" ","")) );
+                        if(AadhaarUtil.isAadhaarNumberValid(match.groupValues[0].replace(" ",""))){
+                            aadharNumberBool = true
+                            aadharNumber = match.groupValues[0].replace(" ","")
+                        }
                     }
                     if(blockText.contains("INCOME TAX DEPARTMENT")){
                         panTextBool = true
