@@ -37,6 +37,26 @@ EN
     <string name="hindi" translatable="false">
 हिन्दी
 </string>
+    <string name="login">
+
+Login
+</string>
+    <string name="username">
+
+Username
+</string>
+    <string name="enter_yourusername">
+
+Enter your username
+</string>
+    <string name="password">
+
+Password
+</string>
+    <string name="enter_yourpass">
+
+Enter your password
+</string>
 
 
 </resources>

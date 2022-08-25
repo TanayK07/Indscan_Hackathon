@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Indscan_HackathonCheck2/app/src/main/res/drawable/layout_curved.xml" value="0.1595" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Indscan_HackathonCheck2/app/src/main/res/drawable/rectangle_1.xml" value="0.1595" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Indscan_HackathonCheck2/app/src/main/res/drawable/rectangle_2.xml" value="0.1595" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Indscan_HackathonCheck2/app/src/main/res/drawable/rectangle_9.xml" value="0.1595" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Indscan_HackathonCheck2/app/src/main/res/layout/activity_filter.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Indscan_HackathonCheck2/app/src/main/res/layout/activity_main.xml" value="0.12" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Indscan_HackathonCheck2/app/src/main/res/layout/activity_pairing_code.xml" value="0.1796875" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Indscan_HackathonCheck2/app/src/main/res/layout/login.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Tanay/AndroidStudioProjects/Indscan_HackathonCheck2/app/src/main/res/layout/pairingcode.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Tanay/AndroidStudioProjects/Indscan_Hackathonsdgmbs/app/src/main/res/layout/activity_filter.xml" value="0.1796875" />
         <entry key="..\:/Users/Tanay/AndroidStudioProjects/Indscan_Hackathonsdgmbs/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
         <entry key="..\:/Users/Tanay/AndroidStudioProjects/Indscan_Hackathonsdvbh/app/src/main/res/layout/activity_main.xml" value="0.22" />

@@ -274,6 +274,7 @@ tools:context=".FilterActivity">
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#70000000"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -20,7 +20,11 @@
     <string name="pairing_cod">पैरिंग कोड</string>
     <string name="enter_the_p">"वेब पोर्टल पर पैरिंग कोड एंटर करे \nऔर कंटिन्यू बटन दबाएं "</string>
     <string name="continue1">कंटिन्यू</string>
-
+    <string name="login">लॉग इन</string>
+    <string name="username">"यूजरनाम "</string>
+    <string name="enter_yourusername">"यूजरनाम एंटर करे "</string>
+    <string name="password">"पासवर्ड "</string>
+    <string name="enter_yourpass">"पासवर्ड एंटर करे "</string>
 
 
 </resources>

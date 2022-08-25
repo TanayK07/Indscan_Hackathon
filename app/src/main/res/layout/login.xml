@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDEEF1">
+
+
+    <View
+        android:id="@+id/group_19"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/login"
+
+        android:layout_width="99dp"
+        android:layout_height="42dp"
+
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="220dp"
+        android:fontFamily="@font/clash_display"
+        android:gravity="top"
+        android:text="@string/login"
+        android:textAppearance="@style/apply_filte"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="@+id/white_rectangle_1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/back2"
+        app:layout_constraintTop_toBottomOf="@+id/back2"
+        tools:ignore="HardcodedText" />
+
+    <View
+        android:id="@+id/back2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/img_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/group_19" />
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/gilroyb"
+        android:gravity="top"
+        android:text="@string/password"
+        android:textAppearance="@style/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group_4" />
+
+
+    <View
+        android:id="@+id/continue_btn"
+        android:layout_width="0dp"
+        android:layout_height="73dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rectangle_9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group_"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="150"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="25dp"
+
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/gilroyb"
+        android:gravity="top"
+        android:text="@string/username"
+        android:textAppearance="@style/username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group_19" />
+
+    <EditText
+        android:id="@+id/group_4"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="20dp"
+        android:layout_marginStart="20dp"
+
+
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/rectangle_2"
+        android:fontFamily="@font/gilroym"
+        android:hint="@string/enter_yourusername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <EditText
+        android:id="@+id/group_"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:fontFamily="@font/gilroym"
+        android:inputType="textPassword"
+
+        android:paddingLeft="20dp"
+        android:layout_alignParentTop="true"
+        android:hint="@string/enter_yourpass"
+        android:fontfamiy="@fonts/gilroy"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/rectangle_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.197"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <TextView
+        android:id="@+id/continueword"
+        android:layout_width="79dp"
+        android:layout_height="25.12dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textSize="@dimen/SendtoWeb"
+        android:textAlignment="center"
+        android:fontFamily="@font/gilroyb"
+        android:text="@string/continue1"
+        android:textAppearance="@style/continue1"
+        app:layout_constraintBottom_toBottomOf="@+id/continue_btn"
+        app:layout_constraintEnd_toEndOf="@+id/continue_btn"
+        app:layout_constraintStart_toStartOf="@+id/continue_btn"
+        app:layout_constraintTop_toTopOf="@+id/continue_btn" />
+
+    <ImageView
+        android:id="@+id/icons8_logi"
+
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/whitearrowicon"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/continue_btn"
+        app:layout_constraintEnd_toEndOf="@+id/continue_btn"
+        app:layout_constraintStart_toEndOf="@+id/continueword"
+        app:layout_constraintTop_toTopOf="@+id/continue_btn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
