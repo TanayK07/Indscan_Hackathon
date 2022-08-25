@@ -6,6 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.annotation.RequiresApi
 import eu.amirs.JSON
 import net.vishesh.scanner.presentation.BaseScannerActivity
@@ -34,11 +35,12 @@ class scanningscreenActivity : BaseScannerActivity() {
 
         val mainHandler = Handler(Looper.getMainLooper())
         val checkConnection = checkConnection(activityContext)
+        Log.d("tuchutiya","I'm executed");
         mainHandler.post(object : Runnable {
             override fun run() {
                 checkConnection.isConnectedToConsole(activityContext)
                 if(!checkConnection.redirected)
-                    mainHandler.postDelayed(this, 1000)
+                    mainHandler.postDelayed(this, 3000)
             }
         })
 

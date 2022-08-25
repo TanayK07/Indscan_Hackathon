@@ -44,6 +44,7 @@ import java.io.File
 
 class FilterActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
+    var handler: Handler? = Handler()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -78,15 +79,6 @@ class FilterActivity : AppCompatActivity() {
 
         var activityContext = this
 
-        val mainHandler = Handler(Looper.getMainLooper())
-        val checkConnection = checkConnection(activityContext)
-        mainHandler.post(object : Runnable {
-            override fun run() {
-                checkConnection.isConnectedToConsole(activityContext)
-                if(!checkConnection.redirected)
-                    mainHandler.postDelayed(this, 3000)
-            }
-        })
 
         var converted: Bitmap? = gb1
         val image = InputImage.fromBitmap(gb1!!, 0)
