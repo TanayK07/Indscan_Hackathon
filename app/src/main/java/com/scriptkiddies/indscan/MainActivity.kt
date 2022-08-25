@@ -12,6 +12,7 @@ import android.view.Window
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
+import com.brijconceptorg.brijconcept.User
 import com.zeugmasolutions.localehelper.LocaleAwareCompatActivity
 import com.zeugmasolutions.localehelper.Locales
 import java.util.*
@@ -35,7 +36,7 @@ class MainActivity : LocaleAwareCompatActivity() {
         checkRunTimePermission();
         val btn:View = findViewById(R.id.accept_scan_btn)
         btn.setOnClickListener {
-            val intent = Intent(this, PairingCode::class.java)
+            val intent = Intent(this, if(User.isUserLoggedIn(this)) PairingCode::class.java else LoginActivity::class.java);
             startActivity(intent)
         }
         val current: Locale = resources.configuration.locale

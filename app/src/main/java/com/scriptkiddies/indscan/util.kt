@@ -6,9 +6,14 @@ import android.content.Intent
 import android.util.Log
 import android.widget.Toast
 import com.android.volley.AuthFailureError
+import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.brijconceptorg.brijconcept.MyApi
+import com.brijconceptorg.brijconcept.User
+import org.json.JSONObject
+
 
 class checkConnection(context: Context) {
 
@@ -18,65 +23,44 @@ class checkConnection(context: Context) {
     init {
         this.context = context
     }
-    fun isConnectedToConsole(context: Context, ip: String) {
-        val queue = Volley.newRequestQueue(context)
-
-        val url = "http://"+ip+":3001/isconnected"
-        val sr: StringRequest =
-            object : StringRequest(
-                Method.GET, url,
-                Response.Listener { response ->
-                    Log.e(
-                        "HttpClient",
-                        "success! response: $response"
-                    )
-                    if(response.toString().contains("false")==true){
-                        Toast.makeText(
-                            context,
-                            "Disconnected from console",
-                            Toast.LENGTH_LONG
-                        ).show()
-
-                        //Redirect to MainActivity if error occurs
-                        if(!redirected){
-                            redirected = true
-                            val intent = Intent(context, MainActivity::class.java)
-                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            intent.putExtra("EXIT", true);
-                            context.startActivity(intent)
-                            (context as Activity).finish()
+    fun isConnectedToConsole(context: Context) {
+        if(User.CURRENT_PAIRING_CODE!=-1 && User.CURRENT_SESSION_ID.length>0){
+            val api=MyApi();
+            val params="pairing_code="+ User.CURRENT_PAIRING_CODE+"&session_id="+User.CURRENT_SESSION_ID;
+            api.execute(context, Request.Method.GET,"pairing_codes/isLinked?"+params,object:ResponseListener{
+                override fun onResponse(response: JSONObject?) {
+                    if (response != null) {
+                        if(!response.getBoolean("is_linked")){
+                            handleFail();
                         }
-
                     }
-
-
-                },
-                Response.ErrorListener { error ->
-                    if(!redirected){
-                        redirected = true
-                        val intent = Intent(context, MainActivity::class.java)
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        intent.putExtra("EXIT", true);
-                        context.startActivity(intent)
-                        (context as Activity).finish()
+                    else{
+                        handleFail();
                     }
-                    Log.e("HttpClient", "error: $error")
-
-                }) {
-                override fun getParams(): Map<String, String>? {
-                    val params: MutableMap<String, String> = HashMap()
-
-                    return params
                 }
 
-                @Throws(AuthFailureError::class)
-                override fun getHeaders(): Map<String, String> {
-                    val params: MutableMap<String, String> = HashMap()
-                    params["Content-Type"] = "application/x-www-form-urlencoded"
-                    return params
+                override fun onError(message: String?) {
+                    handleFail();
                 }
-            }
-        queue.add(sr)
+
+            })    ;
+        }
+    }
+    fun handleFail(){
+        Toast.makeText(
+            context,
+            "Disconnected from console",
+            Toast.LENGTH_LONG
+        ).show()
+
+        if(!redirected){
+            redirected = true
+            val intent = Intent(context, MainActivity::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.putExtra("EXIT", true);
+            context?.startActivity(intent)
+            (context as Activity).finish()
+        }
     }
 
 }

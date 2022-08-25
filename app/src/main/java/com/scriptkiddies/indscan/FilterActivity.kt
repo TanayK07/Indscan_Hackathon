@@ -82,9 +82,9 @@ class FilterActivity : AppCompatActivity() {
         val checkConnection = checkConnection(activityContext)
         mainHandler.post(object : Runnable {
             override fun run() {
-                checkConnection.isConnectedToConsole(activityContext,decryptedIP)
+                checkConnection.isConnectedToConsole(activityContext)
                 if(!checkConnection.redirected)
-                    mainHandler.postDelayed(this, 1000)
+                    mainHandler.postDelayed(this, 3000)
             }
         })
 
