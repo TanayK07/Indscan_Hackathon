@@ -57,6 +57,23 @@ Password
 
 Enter your password
 </string>
+    <string name="twof">
+        Setup 2-factor \n authentication
+</string>
+    <string name="googleauth">
+
+Enter the secret key on your google authenticator
+</string>
+    <string name="h4b2h4k6vb3">
+
+3h4b2h4k6vb3kh42bk2hb3h2
+</string>
+    <string name="entergen">
+
+Enter Generated 2FA Code
+</string>
+
+
 
 
 </resources>
