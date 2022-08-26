@@ -8,7 +8,6 @@ import android.graphics.BitmapFactory
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
-import android.os.Looper
 import android.util.Base64
 import android.util.Log
 import android.view.View
@@ -24,6 +23,7 @@ import com.android.volley.VolleyError
 import com.android.volley.toolbox.HttpHeaderParser
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.brijconceptorg.brijconcept.User
 import com.google.mlkit.nl.entityextraction.Entity
 import com.google.mlkit.nl.entityextraction.EntityExtraction
 import com.google.mlkit.nl.entityextraction.EntityExtractionParams
@@ -45,6 +45,7 @@ import java.io.File
 class FilterActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     var handler: Handler? = Handler()
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -404,7 +405,8 @@ class FilterActivity : AppCompatActivity() {
                             "isAadharCard", isAadharCard,
                             "aadharNumber", aadharNumber,
                             "isPanCard", isPanCard,
-                            "panNumber", panNumber
+                            "panNumber", panNumber,
+                            "sessionId", User.CURRENT_SESSION_ID
                             )
                     )
                 )
@@ -422,11 +424,14 @@ class FilterActivity : AppCompatActivity() {
                             Log.d("VOLLEY", it)
                             this@FilterActivity.runOnUiThread(java.lang.Runnable {
                                 loading.visibility = View.GONE
-                                val intent = Intent(applicationContext, scanningscreenActivity::class.java)
+                                /*val intent = Intent(applicationContext, scanningscreenActivity::class.java)
                                 intent.putExtra("ipcode", ipcode)
 
                                 intent.putExtra("pairingcode", pairingcode)
                                 startActivity(intent)
+                                finish()*/
+                                val resultIntent = Intent()
+                                setResult(RESULT_OK, resultIntent)
                                 finish()
                             })
                             fun onResponse(response: String?) {

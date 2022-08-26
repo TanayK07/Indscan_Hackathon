@@ -7,8 +7,12 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
 import android.util.Log
+import android.util.SparseIntArray
 import androidx.appcompat.app.AppCompatActivity
-import androidx.camera.core.*
+import androidx.camera.core.ImageAnalysis
+import androidx.camera.core.ImageCapture
+import androidx.camera.core.ImageCaptureException
+import androidx.camera.core.ImageProxy
 import androidx.camera.core.impl.utils.futures.FutureCallback
 import androidx.camera.core.impl.utils.futures.Futures.addCallback
 import androidx.camera.view.CameraController.IMAGE_ANALYSIS
@@ -52,6 +56,7 @@ class ScannerViewModel : ViewModel() {
     val corners = MutableLiveData<Corners?>()
     val mlCorners = MutableLiveData<Corners?>()
     val cornersDef = MutableLiveData<Corners?>()
+    val orientation = MutableLiveData<Int>()
 
     val errors = MutableLiveData<Throwable>()
     val flashStatus = MutableLiveData<FlashStatus>()
@@ -85,6 +90,11 @@ class ScannerViewModel : ViewModel() {
             }
         }
     }
+    private val ORIENTATIONS = SparseIntArray()
+
+
+
+
 
     fun onFlashToggle() {
         flashStatus.value?.let { currentValue ->
@@ -118,6 +128,7 @@ class ScannerViewModel : ViewModel() {
                 FILENAME_FORMAT, Locale.US
             ).format(System.currentTimeMillis()) + ".jpg"
         )
+        //Log.d("ROTATION: ", getRotationCompensation(context as Activity, false).toString())
         /*val imageCaptureBuilder = ImageCapture.Builder().apply {
 
             setCaptureMode(CAPTURE_MODE_MINIMIZE_LATENCY)
@@ -258,7 +269,9 @@ class ScannerViewModel : ViewModel() {
                 .build()
             val objectDetector = ObjectDetection.getClient(options)
 
-
+            //log
+            orientation.value = proxy.imageInfo.rotationDegrees
+            Log.d("sensorOrientation", proxy.imageInfo.rotationDegrees.toString())
             viewFinder.bitmap?.let {
 
 

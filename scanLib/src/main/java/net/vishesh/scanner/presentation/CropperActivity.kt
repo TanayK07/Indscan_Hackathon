@@ -33,6 +33,7 @@ class CropperActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCropperBinding
     private lateinit var points: List<Point>
     private lateinit var oldCorners: Corners
+    private var orientation: Int = 0
 
 
     @SuppressLint("ClickableViewAccessibility")
@@ -48,7 +49,7 @@ class CropperActivity : AppCompatActivity() {
         val extras = intent.extras
         if (extras != null) {
             bitmapUri = intent.extras?.getString("lastUri")?.toUri() ?: error("invalid uri")
-
+            orientation = intent.extras?.getInt("orientation") ?: 0
             val list = if(intent.extras?.getSerializable("detectedCorners")!=null) intent.extras?.getSerializable("detectedCorners") as List<Pair<Double, Double>> else null
             val bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, bitmapUri)
 
@@ -140,7 +141,7 @@ class CropperActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        cropModel.onViewCreated(bitmapUri, contentResolver,oldCorners, this)
+        cropModel.onViewCreated(bitmapUri, contentResolver,oldCorners, this, orientation)
     }
 
     private fun closeActivity() {

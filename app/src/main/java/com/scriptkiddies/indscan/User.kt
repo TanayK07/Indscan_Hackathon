@@ -3,18 +3,12 @@ package com.brijconceptorg.brijconcept
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.security.crypto.EncryptedFile
 import androidx.security.crypto.MasterKey
 import com.scriptkiddies.indscan.MainActivity
-import org.json.JSONArray
-import org.json.JSONException
-import org.json.JSONObject
 import java.io.*
 import java.nio.charset.StandardCharsets
 import java.security.GeneralSecurityException
-import java.util.*
-import androidx.security.crypto.MasterKeys
-import android.security.*;
-import androidx.security.crypto.EncryptedFile
 
 
 class User : AppCompatActivity() {
@@ -22,7 +16,9 @@ class User : AppCompatActivity() {
         private var token: String? = null
         private const val TEXT = "login_oauth_token"
         public var CURRENT_PAIRING_CODE=-1;
-        public var CURRENT_SESSION_ID="";
+        var CURRENT_SESSION_ID="";
+        var hasCreatedThread = false;
+
         fun getToken(context: Context): String {
             /*SharedPreferences preferences = context.getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         token = preferences.getString(TEXT, "");

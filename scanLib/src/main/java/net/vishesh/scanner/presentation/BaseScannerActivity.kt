@@ -67,6 +67,7 @@ abstract class BaseScannerActivity : AppCompatActivity() {
 
         viewModel.lastUri.observe(this) {
             val intent = Intent(this, CropperActivity::class.java)
+            intent.putExtra("orientation", viewModel.orientation.value ?: 90)
             intent.putExtra("lastUri", it.toString())
             var bundle: Bundle
 

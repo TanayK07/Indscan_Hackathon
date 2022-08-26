@@ -5,11 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
-import com.android.volley.AuthFailureError
 import com.android.volley.Request
-import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
 import com.brijconceptorg.brijconcept.MyApi
 import com.brijconceptorg.brijconcept.User
 import org.json.JSONObject
@@ -24,6 +20,7 @@ class checkConnection(context: Context) {
         this.context = context
     }
     fun isConnectedToConsole(context: Context) {
+        Log.d("checkConnection", "isConnectedToConsole")
         if(User.CURRENT_PAIRING_CODE!=-1 && User.CURRENT_SESSION_ID.length>0){
             val api=MyApi();
             val params="pairing_code="+ User.CURRENT_PAIRING_CODE+"&session_id="+User.CURRENT_SESSION_ID;
@@ -52,7 +49,7 @@ class checkConnection(context: Context) {
             "Disconnected from console",
             Toast.LENGTH_LONG
         ).show()
-
+        User.CURRENT_SESSION_ID="";
         if(!redirected){
             redirected = true
             val intent = Intent(context, MainActivity::class.java)

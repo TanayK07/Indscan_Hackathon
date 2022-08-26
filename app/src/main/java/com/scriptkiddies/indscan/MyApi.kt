@@ -2,7 +2,9 @@ package com.brijconceptorg.brijconcept
 
 import android.content.Context
 import android.content.pm.PackageManager
-import com.android.volley.*
+import com.android.volley.AuthFailureError
+import com.android.volley.DefaultRetryPolicy
+import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
@@ -11,12 +13,12 @@ import com.scriptkiddies.indscan.ResponseListenerArray
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import java.io.UnsupportedEncodingException
 
 class MyApi {
     var result: JSONObject? = null
     private var url: String? = null
-    private var baseUrl:String="http://172.17.19.118:8000"
+    private var baseUrl:String="https://9tpvdsrell.execute-api.ap-south-1.amazonaws.com"
+    //private var baseUrl:String="http://172.17.19.118:8000"
     //private static final String extension="https://api.brijconcept.com/api/";
     fun build_api(context: Context, extension: String) {
         url = baseUrl+ extension

@@ -87,7 +87,8 @@ class CropperModel : ViewModel() {
         //oldCorners: Corners,
         contentResolver: ContentResolver,
         oldCorners: Corners,
-        cropperActivity: CropperActivity
+        cropperActivity: CropperActivity,
+        orientation: Int
     ) {
 
         uriToBitmap(
@@ -124,10 +125,11 @@ class CropperModel : ViewModel() {
                     )
                 )
                 var preview = getBitmapFromColorMatrix(exposureMatrix,preview)
-                if(preview.width>preview.height){
+                preview = rotate(preview, orientation-90)
+                /*if(preview.width>preview.height){
                     isRotated = true
                     preview = rotate(preview, -90)
-                }
+                }*/
                 if(oldCorners.points.size == 4){
                     val ratioX:Double = (oldCorners.size.width).div(preview.width.toDouble())
                     val ratioY:Double = (oldCorners.size.height).div(preview.height.toDouble())
@@ -321,11 +323,13 @@ class CropperModel : ViewModel() {
             ) { result ->
                 result.fold(::handleFailure) { bitmap ->
                     var bmp = doSharpen(bitmap, sharp, context)
-                    if(isRotated){
+                    //bmp = rotate(bmp!!, 90)
+                    /*if(isRotated){
 
                         bmp = rotate(bmp!!, 90)
                         isRotated = false
-                    }
+                    }*/
+
                     bitmapToCrop.value = bmp!!
 
                 }

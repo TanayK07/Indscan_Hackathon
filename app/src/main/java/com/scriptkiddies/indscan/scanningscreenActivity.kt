@@ -1,12 +1,13 @@
 package com.scriptkiddies.indscan
 
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import eu.amirs.JSON
 import net.vishesh.scanner.presentation.BaseScannerActivity
@@ -14,6 +15,12 @@ import net.vishesh.scanner.presentation.BaseScannerActivity
 class scanningscreenActivity : BaseScannerActivity() {
     lateinit var ipcode: String
     lateinit var pairingCode: String
+    var resultLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            // parse result and perform action
+        }
+    }
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,14 +42,20 @@ class scanningscreenActivity : BaseScannerActivity() {
 
         val mainHandler = Handler(Looper.getMainLooper())
         val checkConnection = checkConnection(activityContext)
-        Log.d("tuchutiya","I'm executed");
+
         mainHandler.post(object : Runnable {
             override fun run() {
                 checkConnection.isConnectedToConsole(activityContext)
+
                 if(!checkConnection.redirected)
                     mainHandler.postDelayed(this, 3000)
             }
-        })
+        });
+
+
+
+
+
 
     }
 
@@ -56,8 +69,9 @@ class scanningscreenActivity : BaseScannerActivity() {
         i.putExtra("ipcode", ipcode)
         i.putExtra("pairingcode", pairingCode)
         i.putExtra("image", bitmap )
-        startActivity(i)
-        finish()
+        resultLauncher.launch(i)
+        //startActivity(i)
+        //finish()
     }
 
     override fun onClose() {
