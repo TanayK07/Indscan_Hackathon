@@ -388,6 +388,7 @@ class FilterActivity : AppCompatActivity() {
             Log.d(TAG, "PanCard: $isPanCard")
 
             loading.visibility = View.VISIBLE
+            GlobalScope.launch { Dispatchers.IO }
             GlobalScope.launch(Dispatchers.IO) {
                 //convert converted to base64 image
                 val byteArrayOutputStream = ByteArrayOutputStream()

@@ -9,10 +9,13 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.Window
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import com.brijconceptorg.brijconcept.User
+import com.scottyab.rootbeer.RootBeer
 import com.zeugmasolutions.localehelper.LocaleAwareCompatActivity
 import com.zeugmasolutions.localehelper.Locales
 import java.util.*
@@ -24,7 +27,6 @@ class MainActivity : LocaleAwareCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-
         /*window.decorView.systemUiVisibility = (
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
                         View.SYSTEM_UI_FLAG_FULLSCREEN or
@@ -35,9 +37,26 @@ class MainActivity : LocaleAwareCompatActivity() {
         setContentView(R.layout.activity_main)
         checkRunTimePermission();
         val btn:View = findViewById(R.id.accept_scan_btn)
+        val logout_btn:Button=findViewById(R.id.logout_btn);
+        if(!User.isUserLoggedIn(applicationContext)){
+            logout_btn.visibility=View.GONE;
+        }
+        else{
+            logout_btn.setOnClickListener{
+                User.logout(applicationContext);
+            }
+        }
         btn.setOnClickListener {
-            val intent = Intent(this, if(User.isUserLoggedIn(this)) PairingCode::class.java else LoginActivity::class.java);
-            startActivity(intent)
+            val rootProvider=RootBeer(applicationContext);
+            //if(!rootProvider.isRooted()){
+            if(1 == 1){
+                val intent = Intent(applicationContext, if(User.isUserLoggedIn(this)) PairingCode::class.java else LoginActivity::class.java);
+                startActivity(intent)
+            }
+            else{
+                Toast.makeText(applicationContext,"Root access detected, try on another device",Toast.LENGTH_LONG).show();
+            }
+
         }
         val current: Locale = resources.configuration.locale
         Log.d("Current Locale", current.toString())

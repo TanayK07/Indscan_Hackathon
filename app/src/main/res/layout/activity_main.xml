@@ -17,7 +17,8 @@
         app:layout_constraintBottom_toTopOf="@+id/rectangle_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scanning_an" />
+        app:layout_constraintTop_toBottomOf="@+id/scanning_an"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/indscan"
@@ -183,5 +184,13 @@
         app:layout_constraintTop_toBottomOf="@+id/english"
         app:layout_constraintVertical_bias="0.0" />
 
+    <Button
+        android:id="@+id/logout_btn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/ic_logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/hindi"
+        app:layout_constraintTop_toBottomOf="@id/hindi" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

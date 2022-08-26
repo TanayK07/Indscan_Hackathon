@@ -42,10 +42,10 @@ class PairingCodeFragment: Fragment() {
 
         biometricHelper.showBiometricPrompt(
             BiometricPromptInfo(
-                title = "Title", // Mandatory
+                title = "Indscan", // Mandatory
                 negativeButtonText = "Cancel", // Mandatory
-                subtitle = "Subtitle",
-                description = "Description",
+                subtitle = "Place your finger or scan your face",
+                description = "",
                 confirmationRequired = true
             )
         ) {
